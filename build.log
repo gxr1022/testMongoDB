@@ -1,0 +1,23 @@
+/usr/bin/cmake -S/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple -B/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/CMakeFiles /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build'
+/usr/bin/gmake  -f CMakeFiles/run_clients.dir/build.make CMakeFiles/run_clients.dir/depend
+gmake[2]: Entering directory '/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build'
+cd /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/CMakeFiles/run_clients.dir/DependInfo.cmake --color=
+Dependencies file "CMakeFiles/run_clients.dir/src/run_clients.cpp.o.d" is newer than depends file "/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/CMakeFiles/run_clients.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target run_clients
+gmake[2]: Leaving directory '/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build'
+/usr/bin/gmake  -f CMakeFiles/run_clients.dir/build.make CMakeFiles/run_clients.dir/build
+gmake[2]: Entering directory '/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build'
+[ 50%] Building CXX object CMakeFiles/run_clients.dir/src/run_clients.cpp.o
+/usr/bin/c++ -DGFLAGS_IS_A_DLL=0 -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/include -O3 -DNDEBUG -MD -MT CMakeFiles/run_clients.dir/src/run_clients.cpp.o -MF CMakeFiles/run_clients.dir/src/run_clients.cpp.o.d -o CMakeFiles/run_clients.dir/src/run_clients.cpp.o -c /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_clients.cpp
+/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_clients.cpp:1:10: fatal error: mongodbBench.h: No such file or directory
+    1 | #include "mongodbBench.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/run_clients.dir/build.make:76: CMakeFiles/run_clients.dir/src/run_clients.cpp.o] Error 1
+gmake[2]: Leaving directory '/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build'
+gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/run_clients.dir/all] Error 2
+gmake[1]: Leaving directory '/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build'
+gmake: *** [Makefile:91: all] Error 2
