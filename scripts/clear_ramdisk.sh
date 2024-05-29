@@ -1,5 +1,5 @@
 #!/bin/bash
-for ((i=1; i<=128; i++)); do
+for ((i=1; i<=256; i++)); do
     id+=($i)
 done
 

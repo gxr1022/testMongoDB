@@ -13,6 +13,7 @@
 #include <sched.h>
 #include <algorithm>
 #include <random>
+#include <atomic>
 #include <sstream>
 #include <malloc.h>
 #include <mutex>
@@ -34,12 +35,13 @@ using bsoncxx::builder::basic::make_document;
 DEFINE_uint64(str_key_size, 8, "size of key (bytes)");
 DEFINE_uint64(str_value_size, 100, "size of value (bytes)");
 DEFINE_uint64(num_threads, 1, "the number of threads");
+DEFINE_uint64(time_interval, 10, "the time interval of insert operations");
 
 DEFINE_bool(first_mode, true, "fist mode start multiply clients on the same mongoDB server");
 
 DEFINE_string(URI, "mongodb://localhost:27017", "the uri of mongoDB");
-DEFINE_string(client_name, "mydb_1", "the name of client");
-DEFINE_string(collection_name, "test_1", "the name of collection");
+DEFINE_string(client_name, "mydb_", "the name of client");
+DEFINE_string(collection_name, "test_", "the name of collection");
 DEFINE_string(report_prefix, "[report] ", "prefix of report data");
 DEFINE_string(core_binding, "", "Core Binding, example : 0,1,16,17");
 DEFINE_string(URI_set, "", "URIs of different connections ,example : mongodb://localhost:27017, mongodb://localhost:27018");
@@ -56,19 +58,16 @@ private:
 public:
     uint64_t key_size;
     uint64_t value_size;
-
     uint64_t num_of_ops;
-
     uint64_t num_threads;
-
+    uint64_t time_interval;
 
     std::vector<std::string> URIs;
+    std::mutex cout_mutex;
 
     std::string client_name;
     std::string collection_name;
-
     std::string load_benchmark_prefix = "load";
-
     std::string core_binding;
 
     barrier_t barrier;
@@ -83,7 +82,6 @@ public:
 
     mongodbBenchmark(int argc, char **argv);
     ~mongodbBenchmark();
-    op_type_t get_op_type_from_string(const std::string &s);
     std::string from_uint64_to_string(uint64_t value,uint64_t value_size);
     void split_string_from_input(std::vector<int> & splited_str, std::string input_str);
 
@@ -113,8 +111,10 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
 
     this->key_size = FLAGS_str_key_size;
     this->value_size = FLAGS_str_value_size;
+    this->time_interval = FLAGS_time_interval;
 
     barrier_init(&this->barrier,this->num_threads);
+    
     if (FLAGS_URI_set.size() != 0)
     {
         std::stringstream ss(FLAGS_URI_set);
@@ -122,7 +122,7 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
         while (std::getline(ss, item, ','))
         {
             URIs.push_back(item);
-            std::cout<<item<<" ";
+            // std::cout<<item<<" ";
         }
     }
 
@@ -143,7 +143,7 @@ std::string mongodbBenchmark::from_uint64_to_string(uint64_t value,uint64_t valu
     ss << std::setfill('0') << std::setw(value_size) << std::hex << value;
     std::string str = ss.str();
     if (str.length() > value_size) {
-        str = str.substr(str.length() - value_size); // Truncate to the rightmost `key_size` characters
+        str = str.substr(str.length() - value_size);
     }
     return ss.str();
 }
@@ -157,7 +157,7 @@ void mongodbBenchmark::split_string_from_input(std::vector<int>& splited_str, st
         while (std::getline(ss, item, ','))
         {
             splited_str.push_back(std::stoi(item));
-            std::cout<<std::stoi(item)<<" ";
+            // std::cout<<std::stoi(item)<<" ";
         }
     }
 }
@@ -180,7 +180,7 @@ void mongodbBenchmark::load_and_run()
                              { this->clientThread(i, core_id); });
     }
 
-    std::this_thread::sleep_for(std::chrono::seconds(10));
+    std::this_thread::sleep_for(std::chrono::seconds(time_interval));
     stop_flag.store(true);
 
     // Wait for all client threads to finish
@@ -190,10 +190,8 @@ void mongodbBenchmark::load_and_run()
         thread.join();
     }
 
-    auto duration_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now() - start_time).count();
-    std::cout << "All clients run done needs: " << duration_ns << " ns " << std::endl;
 
-    double duration_s = 10;
+    double duration_s = double(time_interval);
     double duration_ns = duration_s * (1000.0 * 1000 * 1000);
     double throughput = num_of_ops / duration_s;
     double average_latency_ns = (double)duration_ns / num_of_ops;
@@ -204,10 +202,11 @@ void mongodbBenchmark::load_and_run()
     benchmark_report(load_benchmark_prefix, "overall_average_latency_ns", std::to_string(average_latency_ns));
 }
 
-void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, uint64_t num_of_ops_per_thread,uint64_t num_of_run_ops_per_thread)
+void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
 {
     set_affinity(core_id);
 
+    std::lock_guard<std::mutex> lock(cout_mutex);
     mongocxx::uri uri;
     if (first_mode)
     {
@@ -217,12 +216,14 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, uint64_t nu
     {
         uri=mongocxx::uri(URIs[thread_id]);
     }
-    std::cout << "URI: " << uri.to_string() << std::endl;
+    // std::cout << "URI: " << uri.to_string() << std::endl;
     mongocxx::client client(uri);
+    client_name+=std::to_string(thread_id);
+    collection_name+=std::to_string(thread_id);
     auto db = client[client_name];
     auto collection = db[collection_name];
 
-    mongocxx::collection::write_concern wc;
+    mongocxx::write_concern wc;
     wc.nodes(0);       
     wc.journal(false); 
 
@@ -232,8 +233,9 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, uint64_t nu
     std::string key;
     while (!stop_flag.load()) {
         key=from_uint64_to_string(rand,key_size);
-        auto insert_one_result = collection.insert_one(make_document(kvp(ele.key, common_value)));
+        auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
         rand++;
     }
+    num_of_ops+=rand;
     collection.drop();
 }
