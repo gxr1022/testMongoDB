@@ -2,14 +2,14 @@
 
 conf_dir="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/config"
 
-num_files=128
+num_files=256
 
-start_port=27017
+start_port=27145
 
-for ((i=1; i<=$num_files; i++)); do
+for ((i=129; i<=$num_files; i++)); do
 
     conf_file="$conf_dir/mongod${i}.conf"
-    port=$((start_port + i - 1))
+    port=$((start_port + $i - 129))
     cat <<EOF > $conf_file
 systemLog:
   destination: file
