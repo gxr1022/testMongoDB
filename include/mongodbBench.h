@@ -58,7 +58,7 @@ private:
 public:
     uint64_t key_size;
     uint64_t value_size;
-    uint64_t num_of_ops;
+    uint64_t num_of_ops=0;
     uint64_t num_threads;
     uint64_t time_interval;
 
@@ -103,7 +103,7 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
     google::ParseCommandLineFlags(&argc, &argv, false);
 
     this->client_name = FLAGS_client_name;
-    this->collection_name = FLAGS_client_name;
+    this->collection_name = FLAGS_collection_name;
 
     this->num_threads = FLAGS_num_threads;
     this->core_binding = FLAGS_core_binding;
@@ -190,9 +190,10 @@ void mongodbBenchmark::load_and_run()
         thread.join();
     }
 
-
+    // sync_barrier();
     double duration_s = double(time_interval);
     double duration_ns = duration_s * (1000.0 * 1000 * 1000);
+    std::cout<<num_of_ops<<std::endl;
     double throughput = num_of_ops / duration_s;
     double average_latency_ns = (double)duration_ns / num_of_ops;
 
@@ -205,8 +206,6 @@ void mongodbBenchmark::load_and_run()
 void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
 {
     set_affinity(core_id);
-
-    std::lock_guard<std::mutex> lock(cout_mutex);
     mongocxx::uri uri;
     if (first_mode)
     {
@@ -218,8 +217,10 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
     }
     // std::cout << "URI: " << uri.to_string() << std::endl;
     mongocxx::client client(uri);
-    client_name+=std::to_string(thread_id);
-    collection_name+=std::to_string(thread_id);
+
+    client_name="mydb_"+std::to_string(thread_id);
+    collection_name="test_"+std::to_string(thread_id);
+    // std::cout<<collection_name<<" "<<client_name<<std::endl;
     auto db = client[client_name];
     auto collection = db[collection_name];
 

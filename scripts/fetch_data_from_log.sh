@@ -4,7 +4,7 @@ set -x
 
 cur_date=$1
 
-logs_folder="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/log/$cur_date"
+logs_folder="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/log_remote/$cur_date"
 csv_folder="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/data/$cur_date"
 
 

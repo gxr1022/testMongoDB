@@ -31,7 +31,7 @@ first_mode=(true false)
 # )
 
 threads=(1)
-for ((i = 8; i <= 216; i += 8)); do
+for ((i = 8; i <= 128; i += 8)); do
     threads+=($i)
 done
 

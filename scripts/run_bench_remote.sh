@@ -1,22 +1,22 @@
 #!/bin/bash
-
+# t=$1
 sudo /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/scripts/clear_ramdisk.sh
 
 config_dir="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/config"
 current=`date "+%Y-%m-%d-%H-%M-%S"`
 RUN_PATH="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple"
 
-time_interval=300
+time_interval=10
 mode=true
 # set -x
 
 
-threads=(1)
-for ((i = 8; i <= 128; i += 8)); do
-    threads+=($i)
-done
+# threads=(104)
+# for ((i = 112; i <= 128; i += 8)); do
+#     threads+=($i)
+# done
 
-# threads=(64)
+threads=(96)
 
 hs=(
 run_clients
