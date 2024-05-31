@@ -1,10 +1,11 @@
 #!/bin/bash
-for ((i=1; i<=256; i++)); do
-    id+=($i)
+basepath="/home/gxr/mongodb-run"
+for ((i=1; i<=24; i++)); do
+    id+=($i)ls 
 done
 
 for i in ${id[*]}; do
-    sudo rm -rf /mnt/nvme0/home/gxr/mongdb-run/ramDisk/mongodb${i}
-    sudo mkdir -p /mnt/nvme0/home/gxr/mongdb-run/ramDisk/mongodb${i}
+    sudo rm -rf $basepath/ramDisk/mongodb${i}
+    sudo mkdir -p $basepath/ramDisk/mongodb${i}
 done 
 

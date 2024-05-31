@@ -1,22 +1,20 @@
 #!/bin/bash
-# t=$1
-sudo /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/scripts/clear_ramdisk.sh
-
-config_dir="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/config"
-current=`date "+%Y-%m-%d-%H-%M-%S"`
-RUN_PATH="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple"
-
-time_interval=10
-mode=true
 # set -x
+mode=$1
+RUN_PATH="/home/gxr/mongodb-run/testMongoDB"
+config_dir="$RUN_PATH/config"
 
+current=`date "+%Y-%m-%d-%H-%M-%S"`
+time_interval=10
 
-# threads=(104)
-# for ((i = 112; i <= 128; i += 8)); do
-#     threads+=($i)
-# done
+sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
-threads=(96)
+threads=(1)
+for ((i = 4; i <= 24; i += 4)); do
+    threads+=($i)
+done
+
+# threads=(96)
 
 hs=(
 run_clients
@@ -51,7 +49,7 @@ if [[ "${PIPESTATUS[0]}" != 0  ]];then
 fi
 
 thread_binding_seq="0"
-thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127)
+thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23)
 for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done

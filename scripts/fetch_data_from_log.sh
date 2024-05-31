@@ -1,11 +1,11 @@
 #! /bin/bash
 
 set -x
-
+RUN_PATH="/home/gxr/mongodb-run/testMongoDB"
 cur_date=$1
 
-logs_folder="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/log_remote/$cur_date"
-csv_folder="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/data/$cur_date"
+logs_folder="$RUN_PATH/log/$cur_date"
+csv_folder="$RUN_PATH/data/$cur_date"
 
 
 

@@ -61,7 +61,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-O3 -DNDEBUG"
 				}
 			],
 			"defines" : 
@@ -83,11 +83,11 @@
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include"
+					"path" : "/home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/include"
+					"path" : "/home/gxr/mongodb-run/testMongoDB/include"
 				}
 			],
 			"language" : "CXX",
@@ -103,16 +103,12 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O3 -DNDEBUG",
 				"role" : "flags"
 			},
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-Wl,-rpath,/usr/local/lib",
-				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
@@ -126,7 +122,11 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "/usr/local/lib/libgflags.so.2.2.2",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
 				"role" : "libraries"
 			}
 		],

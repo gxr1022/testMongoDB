@@ -1,1 +1,17 @@
-ninja: no work to do.
+/usr/bin/cmake -S/home/gxr/mongodb-run/testMongoDB -B/home/gxr/mongodb-run/testMongoDB/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/gxr/mongodb-run/testMongoDB/build/CMakeFiles /home/gxr/mongodb-run/testMongoDB/build//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[1]: 进入目录“/home/gxr/mongodb-run/testMongoDB/build”
+/usr/bin/gmake  -f CMakeFiles/run_clients.dir/build.make CMakeFiles/run_clients.dir/depend
+gmake[2]: 进入目录“/home/gxr/mongodb-run/testMongoDB/build”
+cd /home/gxr/mongodb-run/testMongoDB/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/gxr/mongodb-run/testMongoDB /home/gxr/mongodb-run/testMongoDB /home/gxr/mongodb-run/testMongoDB/build /home/gxr/mongodb-run/testMongoDB/build /home/gxr/mongodb-run/testMongoDB/build/CMakeFiles/run_clients.dir/DependInfo.cmake --color=
+Dependencies file "CMakeFiles/run_clients.dir/src/run_clients.cpp.o.d" is newer than depends file "/home/gxr/mongodb-run/testMongoDB/build/CMakeFiles/run_clients.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target run_clients
+gmake[2]: 离开目录“/home/gxr/mongodb-run/testMongoDB/build”
+/usr/bin/gmake  -f CMakeFiles/run_clients.dir/build.make CMakeFiles/run_clients.dir/build
+gmake[2]: 进入目录“/home/gxr/mongodb-run/testMongoDB/build”
+gmake[2]: 对“CMakeFiles/run_clients.dir/build”无需做任何事。
+gmake[2]: 离开目录“/home/gxr/mongodb-run/testMongoDB/build”
+[100%] Built target run_clients
+gmake[1]: 离开目录“/home/gxr/mongodb-run/testMongoDB/build”
+/usr/bin/cmake -E cmake_progress_start /home/gxr/mongodb-run/testMongoDB/build/CMakeFiles 0
