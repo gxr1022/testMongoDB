@@ -1,7 +1,7 @@
 [
 {
   "directory": "/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build",
-  "command": "/usr/bin/c++ -DGFLAGS_IS_A_DLL=0 -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/include -O3 -DNDEBUG -o CMakeFiles/run_clients.dir/src/run_clients.cpp.o -c /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_clients.cpp",
+  "command": "/usr/bin/c++ -DGFLAGS_IS_A_DLL=0 -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/include -g -o CMakeFiles/run_clients.dir/src/run_clients.cpp.o -c /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_clients.cpp",
   "file": "/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_clients.cpp"
 }
 ]
