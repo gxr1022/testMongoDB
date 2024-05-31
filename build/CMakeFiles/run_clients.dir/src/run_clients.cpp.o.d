@@ -1,7 +1,7 @@
-CMakeFiles/run_client.dir/src/run_client.cpp.o: \
- /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_client.cpp \
+CMakeFiles/run_clients.dir/src/run_clients.cpp.o: \
+ /home/gxr/mongodb-run/testMongoDB/src/run_clients.cpp \
  /usr/include/stdc-predef.h \
- /mnt/nvme0/home/gxr/mongdb-run/test_mongodb/include/mongdbBench.h \
+ /home/gxr/mongodb-run/testMongoDB/include/mongodbBench.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -193,10 +193,9 @@ CMakeFiles/run_client.dir/src/run_client.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/local/include/gflags/gflags.h \
- /usr/local/include/gflags/gflags_declare.h \
- /usr/local/include/gflags/gflags_gflags.h /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
+ /usr/include/assert.h /usr/include/gflags/gflags.h \
+ /usr/include/gflags/gflags_declare.h /usr/include/gflags/gflags_gflags.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
@@ -234,7 +233,9 @@ CMakeFiles/run_client.dir/src/run_client.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
  /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
- /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/malloc.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/atomic \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h /usr/include/malloc.h \
  /usr/include/c++/11/mutex /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
@@ -257,8 +258,6 @@ CMakeFiles/run_client.dir/src/run_client.cpp.o: \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/ext/concurrence.h \
  /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/array/value-fwd.hpp \
@@ -283,12 +282,12 @@ CMakeFiles/run_client.dir/src/run_client.cpp.o: \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/enums/type.hpp \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/types/bson_value/value-fwd.hpp \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/optional.hpp \
- /mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/optional.hpp \
- /mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/type_traits.hpp \
- /mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/functional.hpp \
- /mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/utility.hpp \
+ /home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/optional.hpp \
+ /home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/type_traits.hpp \
+ /home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/functional.hpp \
+ /home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/utility.hpp \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/string_view.hpp \
- /mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/string.hpp \
+ /home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include/core/string.hpp \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/document/view.hpp \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/document/value.hpp \
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/document/value-fwd.hpp \
@@ -483,4 +482,4 @@ CMakeFiles/run_client.dir/src/run_client.cpp.o: \
  /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp \
  /usr/local/include/mongocxx/v_noabi/mongocxx/instance-fwd.hpp \
  /usr/local/include/mongocxx/v_noabi/mongocxx/logger-fwd.hpp \
- /mnt/nvme0/home/gxr/mongdb-run/test_mongodb/include/../util/affinity.hpp
+ /home/gxr/mongodb-run/testMongoDB/include/../util/affinity.hpp

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple
+CMAKE_SOURCE_DIR = /home/gxr/mongodb-run/testMongoDB
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build
+CMAKE_BINARY_DIR = /home/gxr/mongodb-run/testMongoDB/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/CMakeFiles /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gxr/mongodb-run/testMongoDB/build/CMakeFiles /home/gxr/mongodb-run/testMongoDB/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gxr/mongodb-run/testMongoDB/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

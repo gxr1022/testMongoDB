@@ -154,26 +154,26 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/local/lib/cmake/gflags/gflags-config-version.cmake"
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/local/lib/cmake/gflags/gflags-config.cmake"
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/local/lib/cmake/gflags/gflags-nonamespace-targets.cmake"
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-nonamespace-targets.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/local/lib/cmake/gflags/gflags-nonamespace-targets-release.cmake"
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-nonamespace-targets-release.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build",
-		"source" : "/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple"
+		"build" : "/home/gxr/mongodb-run/testMongoDB/build",
+		"source" : "/home/gxr/mongodb-run/testMongoDB"
 	},
 	"version" : 
 	{
