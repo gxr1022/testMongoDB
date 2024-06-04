@@ -6,8 +6,8 @@ set(CMAKE_INSTALL_INCLUDEDIR "include")
 include_directories(
     ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/bsoncxx/v_noabi
     ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/mongocxx/v_noabi
-    /home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include
-    /home/gxr/mongodb-run/testMongoDB/include
+    /home/wjxt/gxr/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include
+    /home/wjxt/gxr/testMongoDB/include
     ${GFLAGS_INCLUDE_DIRS}
 )
 

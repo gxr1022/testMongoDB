@@ -1,11 +1,13 @@
 #!/bin/bash
 # set -x
 mode=$1
-RUN_PATH="/home/gxr/mongodb-run/testMongoDB"
+RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
 current=`date "+%Y-%m-%d-%H-%M-%S"`
 time_interval=10
+
+ip_address="172.20.208.111"
 
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
@@ -54,9 +56,9 @@ for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done
 
-uri_set="mongodb://172.16.33.30:27017"
-for ((port=27018; port<=27144; port++)); do
-    uri_set+=",mongodb://172.16.33.30:$port"
+uri_set="mongodb://$ip_address:27017"
+for ((port=27018; port<=27064; port++)); do
+    uri_set+=",mongodb://$ip_address:$port"
 done
 # echo "$uri_set"
 

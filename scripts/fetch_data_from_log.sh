@@ -1,7 +1,7 @@
 #! /bin/bash
 
 set -x
-RUN_PATH="/home/gxr/mongodb-run/testMongoDB"
+RUN_PATH="/home/wjxt/gxr/testMongoDB"
 cur_date=$1
 
 logs_folder="$RUN_PATH/log/$cur_date"
