@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/wjxt/gxr/testMongoDB/build",
+  "command": "/usr/bin/c++ -DGFLAGS_IS_A_DLL=0 -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/home/wjxt/gxr/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/home/wjxt/gxr/testMongoDB/include -g -o CMakeFiles/run_clients.dir/src/run_clients.cpp.o -c /home/wjxt/gxr/testMongoDB/src/run_clients.cpp",
+  "file": "/home/wjxt/gxr/testMongoDB/src/run_clients.cpp"
+}
+]

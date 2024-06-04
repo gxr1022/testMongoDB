@@ -61,7 +61,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-O3 -DNDEBUG"
+					"fragment" : "-g"
 				}
 			],
 			"defines" : 
@@ -83,11 +83,11 @@
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/gxr/mongodb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include"
+					"path" : "/home/wjxt/gxr/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/gxr/mongodb-run/testMongoDB/include"
+					"path" : "/home/wjxt/gxr/testMongoDB/include"
 				}
 			],
 			"language" : "CXX",
@@ -103,7 +103,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-O3 -DNDEBUG",
+				"fragment" : "-g",
 				"role" : "flags"
 			},
 			{

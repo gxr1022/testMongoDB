@@ -172,8 +172,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/gxr/mongodb-run/testMongoDB/build",
-		"source" : "/home/gxr/mongodb-run/testMongoDB"
+		"build" : "/home/wjxt/gxr/testMongoDB/build",
+		"source" : "/home/wjxt/gxr/testMongoDB"
 	},
 	"version" : 
 	{
