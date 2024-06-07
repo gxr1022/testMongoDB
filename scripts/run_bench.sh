@@ -1,11 +1,11 @@
 #!/bin/bash
-set -x
+# set -x
 
 RUN_PATH="/home/gxr/mongodb-run/testMongoDB"
 config_dir="$RUN_PATH/config"
 current=`date "+%Y-%m-%d-%H-%M-%S"`
 
-time_interval=600
+time_interval=10
 first_mode=(true false)
 
 # threads=(
@@ -25,7 +25,7 @@ first_mode=(true false)
 # )
 
 threads=(1)
-for ((i = 4; i <= 24; i += 4)); do
+for ((i = 4; i <= 48; i += 4)); do
     threads+=($i)
 done
 
@@ -69,7 +69,7 @@ for ((port=1; port<=t; port++)); do
 done
 
 thread_binding_seq="0"
-thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23)
+thread_bind=(1 2 3 4 5 6 7 8 9 10 11 24 25 26 27 28 29 30 31 32 33 34 35 12 13 14 15 16 17 18 19 20 21 22 23 36 37 38 39 40 41 42 43 44 45 46 47)
 for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done
