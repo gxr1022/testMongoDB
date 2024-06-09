@@ -5,18 +5,18 @@ RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
 current=`date "+%Y-%m-%d-%H-%M-%S"`
-time_interval=10
+time_interval=60
 
 ip_address="172.20.208.111"
 
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
-threads=(1)
-for ((i = 4; i <= 24; i += 4)); do
-    threads+=($i)
-done
+# threads=(1)
+# for ((i = 4; i <= 48; i += 4)); do
+#     threads+=($i)
+# done
 
-# threads=(96)
+threads=(40)
 
 hs=(
 run_clients
@@ -51,7 +51,7 @@ if [[ "${PIPESTATUS[0]}" != 0  ]];then
 fi
 
 thread_binding_seq="0"
-thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23)
+thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63)
 for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done
@@ -81,7 +81,7 @@ ${BINARY_PATH}/${h} \
 --str_key_size=${key_size} \
 --str_value_size=${value_size} \
 --URI_set=${uri_set} \
---URI="mongodb://172.16.33.30:27017" \
+--URI="mongodb://172.20.208.111:27017" \
 --time_interval=${time_interval} \
 --first_mode=${mode}
 "

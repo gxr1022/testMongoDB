@@ -1,0 +1,4 @@
+mode,thread_number,load_operations,run_operations,key_size(B),value_size(B),overall_throughput(IOPS),average_latency(ns)
+false,40,,,8,100,476376.400000,2099.180396
+false,44,,,8,100,461496.400000,2166.864140
+false,48,,,8,100,459298.300000,2177.234272

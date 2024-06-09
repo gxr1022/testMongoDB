@@ -4,7 +4,7 @@ set -x
 RUN_PATH="/home/wjxt/gxr/testMongoDB"
 cur_date=$1
 
-logs_folder="$RUN_PATH/log/$cur_date"
+logs_folder="$RUN_PATH/log_remote/$cur_date"
 csv_folder="$RUN_PATH/data/$cur_date"
 
 

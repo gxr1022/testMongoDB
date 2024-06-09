@@ -1,11 +1,11 @@
 #!/bin/bash
-set -x
+# set -x
 
-RUN_PATH="/home/gxr/mongodb-run/testMongoDB"
+RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 current=`date "+%Y-%m-%d-%H-%M-%S"`
 
-time_interval=600
+time_interval=10
 first_mode=(true false)
 
 # threads=(
@@ -25,7 +25,7 @@ first_mode=(true false)
 # )
 
 threads=(1)
-for ((i = 4; i <= 24; i += 4)); do
+for ((i = 4; i <= 32; i += 4)); do
     threads+=($i)
 done
 
@@ -69,7 +69,7 @@ for ((port=1; port<=t; port++)); do
 done
 
 thread_binding_seq="0"
-thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23)
+thread_bind=(0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63)
 for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done
@@ -168,7 +168,7 @@ else
     done
 fi
 
-sudo /home/gxr/mongodb-run/testMongoDB/scripts/clear_ramdisk.sh
+sudo /home/wjxt/gxr/testMongoDB/scripts/clear_ramdisk.sh
 
 done
 done

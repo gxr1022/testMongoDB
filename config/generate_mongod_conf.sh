@@ -1,8 +1,8 @@
 #!/bin/bash
 
-conf_dir="/home/gxr/mongodb-run/testMongoDB/config"
+conf_dir="/home/wjxt/gxr/testMongoDB/config"
 
-num_files=48
+num_files=64
 
 start_port=27017
 
@@ -16,10 +16,10 @@ systemLog:
   path: "/var/log/mongodb/mongod${i}.log"
   logAppend: true
 storage:
-  dbPath: "/home/gxr/mongodb-run/ramDisk/mongodb${i}"
+  dbPath: "/home/wjxt/gxr/testMongoDB/ramDisk/mongodb${i}"
 net:
   port: $port
-  bindIp: 127.0.0.1
+  bindIp: 172.20.208.111
 processManagement:
   timeZoneInfo: /usr/share/zoneinfo
 EOF
