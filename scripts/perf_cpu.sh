@@ -9,7 +9,7 @@ log_dir="$basepath/perf_log"
 perf_log_path="$log_dir/$cur_date.off_cpu"
 mkdir -p $perf_log_path
 
-perf_log_prefix="first_mode.off_cpu.$cur_date"
+perf_log_prefix="first_mode.cpu.$cur_date"
 perf_record_file_name="$perf_log_prefix.perfdata"
 
 perf_output_record_path="$perf_log_path/$perf_record_file_name"

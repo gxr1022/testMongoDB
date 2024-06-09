@@ -33,8 +33,8 @@ while read -r line ; do
     svg_path="$output_dir/$svg_name"
     # exit
     file_name=$line
-    # sudo perf script > out.perf 
-    perf_cmd="sudo perf script --input=$file_name | $perf_exec | $flame_exec --colors=io --title=\"Off-CPU Flame Graph\" > $svg_path"
+    perf_cmd="$flame_exec --color=chain --title=\"Off-CPU Time Flame Graph\" --countname=us < $file_name > $svg_path"
+    # perf_cmd="sudo perf script --input=$file_name | $perf_exec | $flame_exec --colors=io --title=\"Off-CPU Flame Graph of MongoDB\" > $svg_path"
     echo $perf_cmd
     # exit
     eval $perf_cmd
