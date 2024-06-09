@@ -3,6 +3,8 @@ mode=$1
 t=$2
 basepath="/home/gxr/mongodb-run/testMongoDB"
 config_dir="$basepath/config"
+
+
 config_array=()
 for ((port=1; port<=t; port++)); do
     config_array+=("${config_dir}/mongod${port}.conf")
@@ -22,3 +24,5 @@ else
         fi
     done
 fi
+
+

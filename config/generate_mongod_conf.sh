@@ -19,7 +19,7 @@ storage:
   dbPath: "/home/gxr/mongodb-run/ramDisk/mongodb${i}"
 net:
   port: $port
-  bindIp: 127.0.0.1
+  bindIp: 172.20.208.111
 processManagement:
   timeZoneInfo: /usr/share/zoneinfo
 EOF
