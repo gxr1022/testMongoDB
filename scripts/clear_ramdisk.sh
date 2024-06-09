@@ -1,7 +1,8 @@
 #!/bin/bash
-basepath="/home/gxr/mongodb-run"
-for ((i=1; i<=24; i++)); do
-    id+=($i)ls 
+basepath="/home/wjxt/gxr/testMongoDB"
+id=()
+for ((i=1; i<=64; i++)); do
+    id+=($i)
 done
 
 for i in ${id[*]}; do

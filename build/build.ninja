@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: TEST_MONGODB
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -49,10 +49,10 @@ cmake_ninja_workdir = /home/wjxt/gxr/testMongoDB/build/
 
 build cmake_object_order_depends_target_run_clients: phony || CMakeFiles/run_clients.dir
 
-build CMakeFiles/run_clients.dir/src/run_clients.cpp.o: CXX_COMPILER__run_clients_Debug /home/wjxt/gxr/testMongoDB/src/run_clients.cpp || cmake_object_order_depends_target_run_clients
+build CMakeFiles/run_clients.dir/src/run_clients.cpp.o: CXX_COMPILER__run_clients_Release /home/wjxt/gxr/testMongoDB/src/run_clients.cpp || cmake_object_order_depends_target_run_clients
   DEFINES = -DGFLAGS_IS_A_DLL=0
   DEP_FILE = CMakeFiles/run_clients.dir/src/run_clients.cpp.o.d
-  FLAGS = -g
+  FLAGS = -O3 -DNDEBUG
   INCLUDES = -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/home/wjxt/gxr/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/home/wjxt/gxr/testMongoDB/include
   OBJECT_DIR = CMakeFiles/run_clients.dir
   OBJECT_FILE_DIR = CMakeFiles/run_clients.dir/src
@@ -65,8 +65,8 @@ build CMakeFiles/run_clients.dir/src/run_clients.cpp.o: CXX_COMPILER__run_client
 #############################################
 # Link the executable run_clients
 
-build run_clients: CXX_EXECUTABLE_LINKER__run_clients_Debug CMakeFiles/run_clients.dir/src/run_clients.cpp.o | /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
-  FLAGS = -g
+build run_clients: CXX_EXECUTABLE_LINKER__run_clients_Release CMakeFiles/run_clients.dir/src/run_clients.cpp.o | /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
+  FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = -lbsoncxx  -lmongocxx  /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2  -lpthread
   OBJECT_DIR = CMakeFiles/run_clients.dir
   POST_BUILD = :

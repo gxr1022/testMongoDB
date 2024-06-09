@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.11"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "run_clients::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-run_clients-Debug-1367ad3db110cb869b10.json",
+					"jsonFile" : "target-run_clients-Release-97e95b557d75e9883224.json",
 					"name" : "run_clients",
 					"projectIndex" : 0
 				}
