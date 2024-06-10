@@ -20,6 +20,7 @@
 #include <thread>
 
 #include <bsoncxx/builder/basic/document.hpp>
+#include <bsoncxx/builder/stream/document.hpp>
 #include <bsoncxx/json.hpp>
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
@@ -87,7 +88,10 @@ public:
 
     void clientThread(int thread_id, uint64_t core_id);
     void load_and_run();
-
+    void queryProfileCollection();
+    void copyProfileToTempCollection(mongocxx::database& db);
+    void setProfilingLevel(mongocxx::database& db, int level, double sampleRate);
+    
     void benchmark_report(const std::string benchmark_prefix, const std::string &name, const std::string &value)
     {
         standard_report(benchmark_prefix, name, value);
@@ -162,9 +166,21 @@ void mongodbBenchmark::split_string_from_input(std::vector<int>& splited_str, st
     }
 }
 
+// void mongodbBenchmark::queryProfileCollection()
+// {
+//     mongocxx::client client(mongocxx::uri(FLAGS_URI));
+//     auto db = client["your_database_name"];
+
+//     mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
+   
+//     for (auto&& doc : cursor) {
+//         std::cout << bsoncxx::to_json(doc) << std::endl;
+//     }
+// }
 void mongodbBenchmark::load_and_run()
 {
-    mongocxx::instance instance{}; // This should be done only once.
+    static mongocxx::instance instance{}; // This should be done only once.
+    
 
     // Create and start client threads
     std::vector<std::thread> threads;
@@ -193,7 +209,7 @@ void mongodbBenchmark::load_and_run()
     // sync_barrier();
     double duration_s = double(time_interval);
     double duration_ns = duration_s * (1000.0 * 1000 * 1000);
-    std::cout<<num_of_ops<<std::endl;
+    // std::cout<<num_of_ops<<std::endl;
     double throughput = num_of_ops / duration_s;
     double average_latency_ns = (double)duration_ns / num_of_ops;
 
@@ -201,6 +217,23 @@ void mongodbBenchmark::load_and_run()
     benchmark_report(load_benchmark_prefix, "overall_duration_s", std::to_string(duration_s));
     benchmark_report(load_benchmark_prefix, "overall_throughput", std::to_string(throughput));
     benchmark_report(load_benchmark_prefix, "overall_average_latency_ns", std::to_string(average_latency_ns));
+
+
+}
+
+void  mongodbBenchmark::copyProfileToTempCollection(mongocxx::database& db) {
+    mongocxx::pipeline p{};
+    p.match(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
+    p.out("profile_temp");
+
+    db["system.profile"].aggregate(p, mongocxx::options::aggregate{});
+}
+
+void mongodbBenchmark::setProfilingLevel(mongocxx::database& db, int level, double sampleRate) {
+    bsoncxx::builder::stream::document command_builder;
+    command_builder << "profile" << level << "sampleRate" << sampleRate;
+    auto command = command_builder.view();
+    db.run_command(command);
 }
 
 void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
@@ -224,10 +257,12 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
     auto db = client[client_name];
     auto collection = db[collection_name];
 
+    setProfilingLevel(db,1,1.0);
+
+
     mongocxx::write_concern wc;
     wc.nodes(0);       
     wc.journal(false); 
-
     collection.write_concern(wc);
 
     uint64_t rand=0;
@@ -237,6 +272,24 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
         auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
         rand++;
     }
+
+    // copyProfileToTempCollection(db);
+    std::string fileName="/home/wjxt/gxr/testMongoDB/log/"+std::to_string(thread_id)+"output.json";
+    std::ofstream outFile(fileName);
+
+    mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
+
+    
+    
+    if (!outFile.is_open()) {
+        std::cerr << "Failed to open file: " << fileName << std::endl;
+        return;
+    }
+    for (auto&& doc : cursor) {
+        outFile << bsoncxx::to_json(doc) << std::endl;
+    }
+    outFile.close();
+
     num_of_ops+=rand;
     collection.drop();
 }

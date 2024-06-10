@@ -16,7 +16,7 @@ sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 #     threads+=($i)
 # done
 
-threads=(40)
+threads=(25)
 
 hs=(
 run_clients
