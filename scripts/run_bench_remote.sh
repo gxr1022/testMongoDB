@@ -5,7 +5,7 @@ RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
 current=`date "+%Y-%m-%d-%H-%M-%S"`
-time_interval=60
+time_interval=1800
 
 ip_address="172.20.208.111"
 
@@ -16,7 +16,7 @@ sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 #     threads+=($i)
 # done
 
-threads=(25)
+threads=(16)
 
 hs=(
 run_clients

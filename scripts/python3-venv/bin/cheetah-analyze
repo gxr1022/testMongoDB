@@ -1,0 +1,6 @@
+#!/home/wjxt/gxr/testMongoDB/scripts/python3-venv/bin/python
+
+from Cheetah import DirectiveAnalyzer
+
+if __name__ == '__main__':
+    DirectiveAnalyzer.main()
