@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/run_clients.dir/src/run_clients.cpp.o -o run_clients  -Wl,-rpath,/usr/local/lib -lbsoncxx -lmongocxx /usr/local/lib/libgflags.so.2.2.2 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/run_clients.dir/src/run_clients.cpp.o -o run_clients  -lbsoncxx -lmongocxx /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2 -lpthread 

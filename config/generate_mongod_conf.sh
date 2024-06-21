@@ -1,25 +1,25 @@
 #!/bin/bash
 
-conf_dir="/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/config"
+conf_dir="/home/wjxt/gxr/testMongoDB/config"
 
-num_files=256
+num_files=64
 
-start_port=27145
+start_port=27017
 
-for ((i=129; i<=$num_files; i++)); do
+for ((i=1; i<=$num_files; i++)); do
 
     conf_file="$conf_dir/mongod${i}.conf"
-    port=$((start_port + $i - 129))
+    port=$((start_port + $i - 1))
     cat <<EOF > $conf_file
 systemLog:
   destination: file
   path: "/var/log/mongodb/mongod${i}.log"
   logAppend: true
 storage:
-  dbPath: "/mnt/nvme0/home/gxr/mongdb-run/ramDisk/mongodb${i}"
+  dbPath: "/home/wjxt/gxr/testMongoDB/ramDisk/mongodb${i}"
 net:
   port: $port
-  bindIp: 127.0.0.1
+  bindIp: 172.20.208.111
 processManagement:
   timeZoneInfo: /usr/share/zoneinfo
 EOF

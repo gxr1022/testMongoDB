@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: TEST_MONGODB
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/
+cmake_ninja_workdir = /home/wjxt/gxr/testMongoDB/build/
 # =============================================================================
 # Object build statements for EXECUTABLE target run_clients
 
@@ -49,11 +49,11 @@ cmake_ninja_workdir = /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build/
 
 build cmake_object_order_depends_target_run_clients: phony || CMakeFiles/run_clients.dir
 
-build CMakeFiles/run_clients.dir/src/run_clients.cpp.o: CXX_COMPILER__run_clients_Debug /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/src/run_clients.cpp || cmake_object_order_depends_target_run_clients
+build CMakeFiles/run_clients.dir/src/run_clients.cpp.o: CXX_COMPILER__run_clients_Release /home/wjxt/gxr/testMongoDB/src/run_clients.cpp || cmake_object_order_depends_target_run_clients
   DEFINES = -DGFLAGS_IS_A_DLL=0
   DEP_FILE = CMakeFiles/run_clients.dir/src/run_clients.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/mnt/nvme0/home/gxr/mongdb-run/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/include
+  FLAGS = -O3 -DNDEBUG
+  INCLUDES = -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I/home/wjxt/gxr/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src/include -I/home/wjxt/gxr/testMongoDB/include
   OBJECT_DIR = CMakeFiles/run_clients.dir
   OBJECT_FILE_DIR = CMakeFiles/run_clients.dir/src
 
@@ -65,9 +65,9 @@ build CMakeFiles/run_clients.dir/src/run_clients.cpp.o: CXX_COMPILER__run_client
 #############################################
 # Link the executable run_clients
 
-build run_clients: CXX_EXECUTABLE_LINKER__run_clients_Debug CMakeFiles/run_clients.dir/src/run_clients.cpp.o | /usr/local/lib/libgflags.so.2.2.2
-  FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  -lbsoncxx  -lmongocxx  /usr/local/lib/libgflags.so.2.2.2
+build run_clients: CXX_EXECUTABLE_LINKER__run_clients_Release CMakeFiles/run_clients.dir/src/run_clients.cpp.o | /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
+  FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = -lbsoncxx  -lmongocxx  /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2  -lpthread
   OBJECT_DIR = CMakeFiles/run_clients.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -79,8 +79,9 @@ build run_clients: CXX_EXECUTABLE_LINKER__run_clients_Debug CMakeFiles/run_clien
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
+  COMMAND = cd /home/wjxt/gxr/testMongoDB/build && /usr/bin/ccmake -S/home/wjxt/gxr/testMongoDB -B/home/wjxt/gxr/testMongoDB/build
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
@@ -90,7 +91,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build && /usr/bin/cmake --regenerate-during-build -S/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple -B/mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build
+  COMMAND = cd /home/wjxt/gxr/testMongoDB/build && /usr/bin/cmake --regenerate-during-build -S/home/wjxt/gxr/testMongoDB -B/home/wjxt/gxr/testMongoDB/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -106,7 +107,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /mnt/nvme0/home/gxr/mongdb-run/test_mongodb_simple/build
+# Folder: /home/wjxt/gxr/testMongoDB/build
 
 build all: phony run_clients
 
@@ -117,14 +118,14 @@ build all: phony run_clients
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake /usr/local/lib/cmake/gflags/gflags-config-version.cmake /usr/local/lib/cmake/gflags/gflags-config.cmake /usr/local/lib/cmake/gflags/gflags-nonamespace-targets-release.cmake /usr/local/lib/cmake/gflags/gflags-nonamespace-targets.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindBoost.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-nonamespace-targets-release.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-nonamespace-targets.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindBoost.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake /usr/local/lib/cmake/gflags/gflags-config-version.cmake /usr/local/lib/cmake/gflags/gflags-config.cmake /usr/local/lib/cmake/gflags/gflags-nonamespace-targets-release.cmake /usr/local/lib/cmake/gflags/gflags-nonamespace-targets.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindBoost.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-nonamespace-targets-release.cmake /usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-nonamespace-targets.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/FindBoost.cmake /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.22/Modules/FindPackageMessage.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake: phony
 
 
 #############################################
