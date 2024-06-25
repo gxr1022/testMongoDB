@@ -5,8 +5,9 @@ RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 current=`date "+%Y-%m-%d-%H-%M-%S"`
 
-time_interval=10
-first_mode=(true false)
+time_interval=1800
+# first_mode=(true false)
+first_mode=(true)
 
 # threads=(
 # 	1
@@ -24,12 +25,12 @@ first_mode=(true false)
 # 	24
 # )
 
-threads=(1)
-for ((i = 4; i <= 32; i += 4)); do
-    threads+=($i)
-done
+# threads=(1)
+# for ((i = 4; i <= 32; i += 4)); do
+#     threads+=($i)
+# done
 
-# threads=(8)
+threads=(16)
 
 hs=(
 run_clients
