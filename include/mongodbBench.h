@@ -91,7 +91,7 @@ public:
     void queryProfileCollection();
     void copyProfileToTempCollection(mongocxx::database& db);
     void setProfilingLevel(mongocxx::database& db, int level, double sampleRate);
-    
+    void startEBPFScript(const std::string& comm_name);
     void benchmark_report(const std::string benchmark_prefix, const std::string &name, const std::string &value)
     {
         standard_report(benchmark_prefix, name, value);
@@ -135,6 +135,17 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
         common_value += (char)('a' + (i % 26));
     }
 
+}
+
+void mongodbBenchmark::startEBPFScript(const std::string& comm_name) {
+    std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"echo 'gxr123456' | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_mongo_lock_count_analysis.sh " 
+                          + std::to_string(time_interval) + " " 
+                          + std::to_string(num_threads) + " " 
+                          + comm_name + "\"";
+    int result = system(command.c_str());
+    if (result != 0) {
+        std::cerr << "Error: Command execution failed with code " << result << std::endl;
+    }
 }
 
 mongodbBenchmark::~mongodbBenchmark()
@@ -218,7 +229,6 @@ void mongodbBenchmark::load_and_run()
     benchmark_report(load_benchmark_prefix, "overall_throughput", std::to_string(throughput));
     benchmark_report(load_benchmark_prefix, "overall_average_latency_ns", std::to_string(average_latency_ns));
 
-
 }
 
 void  mongodbBenchmark::copyProfileToTempCollection(mongocxx::database& db) {
@@ -264,6 +274,9 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
     wc.nodes(0);       
     wc.journal(false); 
     collection.write_concern(wc);
+
+    // std::string comm_name = "conn" + std::to_string(thread_id+1);  
+    // startEBPFScript(comm_name);
 
     uint64_t rand=0;
     std::string key;

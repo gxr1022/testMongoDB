@@ -1,6 +1,10 @@
 #!/bin/bash
 # set -x
 mode=$1
+
+SSH_PASSWORD="gxr123456"
+SUDO_PASSWORD="gxr123456"
+
 RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
@@ -12,11 +16,11 @@ ip_address="172.20.208.111"
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
 # threads=(1)
-# for ((i = 4; i <= 48; i += 4)); do
+# for ((i = 4; i <= 12; i += 4)); do
 #     threads+=($i)
 # done
 
-threads=(16)
+threads=(8)
 
 hs=(
 run_clients
@@ -51,7 +55,7 @@ if [[ "${PIPESTATUS[0]}" != 0  ]];then
 fi
 
 thread_binding_seq="0"
-thread_bind=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63)
+thread_bind=(0 1 2 3 4 5 6 7 8 9 10 11 24 25 26 27 28 29 30 31 32 33 34 35 12 13 14 15 16 17 18 19 20 21 22 23 36 37 38 39 40 41 42 43 44 45 46 47)
 for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done
@@ -62,39 +66,46 @@ for ((port=27018; port<=27064; port++)); do
 done
 # echo "$uri_set"
 
-for t in ${threads[*]};do
-for kv_size in "${kv_sizes[@]}";do
+for t in ${threads[*]}; do
+	mongod_start_output=$(sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo $SUDO_PASSWORD | sudo -S /home/gxr/mongodb-run/testMongoDB/scripts/start_mongod.sh true 1")
+ 	mongod_pid=$(echo "$mongod_start_output" | grep -oP 'forked process: \K\d+')
 
-kv_size_array=( ${kv_size[*]} )
-key_size=${kv_size_array[0]}
-value_size=${kv_size_array[1]}
+	for kv_size in "${kv_sizes[@]}"; do
+        kv_size_array=( ${kv_size[*]} )
+        key_size=${kv_size_array[0]}
+        value_size=${kv_size_array[1]}
 
-for h in ${hs[*]};do
+        for h in ${hs[*]}; do
+            sudo bash -c "echo 1 > /proc/sys/vm/drop_caches"
+            h_name=$(basename ${h})
 
-sudo bash -c "echo 1 > /proc/sys/vm/drop_caches"
-h_name=$(basename ${h})
+            cmd="numactl --membind=0 \
+            ${BINARY_PATH}/${h} \
+            --num_threads=${t} \
+            --core_binding=${thread_binding_seq} \
+            --str_key_size=${key_size} \
+            --str_value_size=${value_size} \
+            --URI_set=${uri_set} \
+            --URI=mongodb://172.20.208.111:27017 \
+            --time_interval=${time_interval} \
+            --first_mode=${mode}"
 
-cmd="numactl --membind=0 \
-${BINARY_PATH}/${h} \
---num_threads=${t} \
---core_binding=${thread_binding_seq} \
---str_key_size=${key_size} \
---str_value_size=${value_size} \
---URI_set=${uri_set} \
---URI="mongodb://172.20.208.111:27017" \
---time_interval=${time_interval} \
---first_mode=${mode}
-"
-this_log_path=${LOG_PATH}/${h_name}.${t}.thread.${mode}.${key_size}.${value_size}.log
-echo ${cmd} 2>&1 |  tee ${this_log_path}
+            this_log_path=${LOG_PATH}/${h_name}.${t}.thread.${mode}.${key_size}.${value_size}.log
+            echo ${cmd} 2>&1 | tee ${this_log_path}
 
-timeout -v 3600 \
-stdbuf -o0 \
-${cmd} 2>&1 |  tee -a ${this_log_path}
-echo log file in : ${this_log_path}
+            timeout -v 3600 stdbuf -o0 ${cmd} 2>&1 | tee -a ${this_log_path}
+            echo "Log file in: ${this_log_path}"
+        done
+    done
 
-done
-done
+    echo "All threads have finished."
+
+  
+    sleep 5
+	# shutdown mongodb
+    sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo $SUDO_PASSWORD | sudo -S /home/gxr/mongodb-run/testMongoDB/scripts/shutdown_mongod.sh true"
+    sleep 5
+    
 done
 
 popd
