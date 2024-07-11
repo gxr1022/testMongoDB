@@ -1,5 +1,11 @@
 #!/bin/bash
 # set -x
+
+sudo -v
+
+# 保持 sudo 凭证有效直到脚本结束
+while true; do sudo -v; sleep 60; done &
+
 mode=$1
 
 SSH_PASSWORD="gxr123456"
@@ -9,18 +15,18 @@ RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
 current=`date "+%Y-%m-%d-%H-%M-%S"`
-time_interval=1800
+time_interval=600
 
 ip_address="172.20.208.111"
 
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
-# threads=(1)
-# for ((i = 4; i <= 12; i += 4)); do
-#     threads+=($i)
-# done
+threads=(1)
+for ((i = 4; i <= 32; i += 4)); do
+    threads+=($i)
+done
 
-threads=(8)
+# threads=(32)
 
 hs=(
 run_clients
@@ -88,6 +94,7 @@ for t in ${threads[*]}; do
             --URI_set=${uri_set} \
             --URI=mongodb://172.20.208.111:27017 \
             --time_interval=${time_interval} \
+			--pid=${mongod_pid} \
             --first_mode=${mode}"
 
             this_log_path=${LOG_PATH}/${h_name}.${t}.thread.${mode}.${key_size}.${value_size}.log
@@ -108,4 +115,6 @@ for t in ${threads[*]}; do
     
 done
 
+
 popd
+kill %1
