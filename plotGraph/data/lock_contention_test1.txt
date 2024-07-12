@@ -1,0 +1,165 @@
+Total times per thread:
+Thread 269250 ::: total wait time 30628933.25us ::: total hold time 85662704.25us ::: total enter count 18515833
+
+Total times per thread:
+Thread 269928 ::: total wait time 38865735.01us ::: total hold time 94385511.40us ::: total enter count 17949002
+Thread 269929 ::: total wait time 38955481.85us ::: total hold time 95510052.04us ::: total enter count 17995883
+Thread 269930 ::: total wait time 38204795.25us ::: total hold time 93855998.96us ::: total enter count 17818651
+Thread 269931 ::: total wait time 39045109.15us ::: total hold time 93732091.83us ::: total enter count 17810362
+
+Total times per thread:
+Thread 270699 ::: total wait time 47529897.28us ::: total hold time 106238553.24us ::: total enter count 18679335
+Thread 270700 ::: total wait time 48899286.91us ::: total hold time 105536645.36us ::: total enter count 18988516
+Thread 270701 ::: total wait time 47531095.00us ::: total hold time 105349275.31us ::: total enter count 18917106
+Thread 270702 ::: total wait time 47637764.68us ::: total hold time 105557404.39us ::: total enter count 19104352
+Thread 270703 ::: total wait time 47343244.64us ::: total hold time 105920880.53us ::: total enter count 18596904
+Thread 270704 ::: total wait time 47539565.19us ::: total hold time 105775156.24us ::: total enter count 19117011
+Thread 270705 ::: total wait time 48930961.97us ::: total hold time 105782986.42us ::: total enter count 19063775
+Thread 270706 ::: total wait time 47333010.79us ::: total hold time 106417148.26us ::: total enter count 19071892
+
+Total times per thread:
+Thread 271549 ::: total wait time 54887038.65us ::: total hold time 117947456.86us ::: total enter count 19590500
+Thread 271550 ::: total wait time 55003509.04us ::: total hold time 118010839.80us ::: total enter count 19534341
+Thread 271551 ::: total wait time 54943995.61us ::: total hold time 119191883.50us ::: total enter count 19231775
+Thread 271552 ::: total wait time 55099519.76us ::: total hold time 118362432.63us ::: total enter count 19548103
+Thread 271553 ::: total wait time 55235839.53us ::: total hold time 119347000.00us ::: total enter count 19321354
+Thread 271554 ::: total wait time 54137046.38us ::: total hold time 117859933.92us ::: total enter count 19148547
+Thread 271555 ::: total wait time 54479799.92us ::: total hold time 119205441.45us ::: total enter count 19254816
+Thread 271556 ::: total wait time 55716978.26us ::: total hold time 118926514.39us ::: total enter count 19811366
+Thread 271557 ::: total wait time 54706678.73us ::: total hold time 118299592.45us ::: total enter count 19253565
+Thread 271558 ::: total wait time 55674799.64us ::: total hold time 118757693.88us ::: total enter count 19716278
+Thread 271559 ::: total wait time 55496273.08us ::: total hold time 118591484.77us ::: total enter count 19623794
+Thread 271560 ::: total wait time 54519930.08us ::: total hold time 117177676.36us ::: total enter count 19484256
+
+
+Total times per thread:
+Thread 272571 ::: total wait time 67647625.79us ::: total hold time 125472267.27us ::: total enter count 18743757
+Thread 272572 ::: total wait time 68319782.58us ::: total hold time 125751552.58us ::: total enter count 18189622
+Thread 272573 ::: total wait time 68005987.09us ::: total hold time 125222287.20us ::: total enter count 18775386
+Thread 272574 ::: total wait time 68465166.50us ::: total hold time 125332585.35us ::: total enter count 18847031
+Thread 272575 ::: total wait time 67544207.20us ::: total hold time 125967281.92us ::: total enter count 18827435
+Thread 272576 ::: total wait time 67273436.27us ::: total hold time 126180867.10us ::: total enter count 18497461
+Thread 272577 ::: total wait time 67387964.74us ::: total hold time 126038894.86us ::: total enter count 18433588
+Thread 272578 ::: total wait time 59061874.91us ::: total hold time 109843301.42us ::: total enter count 15995266
+Thread 272579 ::: total wait time 67869706.83us ::: total hold time 126241696.81us ::: total enter count 18341697
+Thread 272580 ::: total wait time 67376929.80us ::: total hold time 126121198.85us ::: total enter count 18704953
+Thread 272581 ::: total wait time 61510986.43us ::: total hold time 112920786.90us ::: total enter count 17028558
+Thread 272582 ::: total wait time 67473156.08us ::: total hold time 125522278.17us ::: total enter count 18875744
+Thread 272583 ::: total wait time 67710198.21us ::: total hold time 125152422.86us ::: total enter count 18922463
+Thread 272584 ::: total wait time 66868316.72us ::: total hold time 125530250.02us ::: total enter count 18199509
+Thread 272585 ::: total wait time 67853695.12us ::: total hold time 125208637.57us ::: total enter count 18961472
+Thread 272586 ::: total wait time 67059893.55us ::: total hold time 124600040.75us ::: total enter count 18367264
+
+Total times per thread:
+Thread 273830 ::: total wait time 59531320.26us ::: total hold time 146179723.28us ::: total enter count 18082988
+Thread 273831 ::: total wait time 58099405.96us ::: total hold time 146735227.97us ::: total enter count 17943468
+Thread 273832 ::: total wait time 59547692.15us ::: total hold time 145870595.87us ::: total enter count 18027340
+Thread 273833 ::: total wait time 58363002.43us ::: total hold time 146597207.02us ::: total enter count 17964683
+Thread 273834 ::: total wait time 57207553.68us ::: total hold time 146600537.38us ::: total enter count 17880229
+Thread 273835 ::: total wait time 59358371.23us ::: total hold time 146304749.93us ::: total enter count 18024782
+Thread 273836 ::: total wait time 59667020.46us ::: total hold time 146336822.21us ::: total enter count 18013517
+Thread 273837 ::: total wait time 59242062.61us ::: total hold time 146196899.92us ::: total enter count 17955065
+Thread 273838 ::: total wait time 56590265.85us ::: total hold time 147094000.88us ::: total enter count 17848161
+Thread 273839 ::: total wait time 59796343.92us ::: total hold time 146231135.75us ::: total enter count 18095287
+Thread 273840 ::: total wait time 49650590.43us ::: total hold time 123832440.41us ::: total enter count 15094761
+Thread 273841 ::: total wait time 59326618.66us ::: total hold time 146026453.74us ::: total enter count 18024474
+Thread 273842 ::: total wait time 59342386.53us ::: total hold time 146360012.30us ::: total enter count 17950179
+Thread 273843 ::: total wait time 57562129.12us ::: total hold time 141469738.87us ::: total enter count 17375833
+Thread 273844 ::: total wait time 56851665.73us ::: total hold time 147000127.74us ::: total enter count 17882823
+Thread 273845 ::: total wait time 58227608.49us ::: total hold time 146996855.56us ::: total enter count 17970550
+Thread 273846 ::: total wait time 58021460.85us ::: total hold time 146720143.31us ::: total enter count 17873228
+Thread 273847 ::: total wait time 60245819.10us ::: total hold time 146940603.08us ::: total enter count 18143054
+Thread 273848 ::: total wait time 57470154.94us ::: total hold time 146832945.34us ::: total enter count 17879682
+Thread 273849 ::: total wait time 56281109.43us ::: total hold time 145089558.80us ::: total enter count 17673409
+
+Total times per thread:
+Thread 275199 ::: total wait time 81678896.83us ::: total hold time 160523274.63us ::: total enter count 17490454
+Thread 275200 ::: total wait time 80848716.95us ::: total hold time 160849235.46us ::: total enter count 17507656
+Thread 275201 ::: total wait time 79390813.88us ::: total hold time 161434286.14us ::: total enter count 17646371
+Thread 275202 ::: total wait time 80458902.24us ::: total hold time 158869367.81us ::: total enter count 17272667
+Thread 275203 ::: total wait time 80893946.97us ::: total hold time 157814853.65us ::: total enter count 17241042
+Thread 275204 ::: total wait time 81087159.03us ::: total hold time 161012226.33us ::: total enter count 17645537
+Thread 275205 ::: total wait time 81464384.03us ::: total hold time 160588261.10us ::: total enter count 17575730
+Thread 275206 ::: total wait time 80791799.25us ::: total hold time 160724773.24us ::: total enter count 17441072
+Thread 275207 ::: total wait time 51608498.07us ::: total hold time 91034773.74us ::: total enter count 9925029
+Thread 275208 ::: total wait time 80718526.28us ::: total hold time 160790814.83us ::: total enter count 17571468
+Thread 275209 ::: total wait time 80325458.25us ::: total hold time 159958530.87us ::: total enter count 17526795
+Thread 275210 ::: total wait time 79730291.70us ::: total hold time 161183716.71us ::: total enter count 17581066
+Thread 275211 ::: total wait time 80689959.71us ::: total hold time 160421220.11us ::: total enter count 17440391
+Thread 275212 ::: total wait time 81093819.58us ::: total hold time 160644089.61us ::: total enter count 17676576
+Thread 275213 ::: total wait time 80660685.64us ::: total hold time 161020146.62us ::: total enter count 17667221
+Thread 275214 ::: total wait time 80620339.35us ::: total hold time 160893084.65us ::: total enter count 17524456
+Thread 275215 ::: total wait time 59509028.57us ::: total hold time 114061801.86us ::: total enter count 12428220
+Thread 275216 ::: total wait time 80014313.60us ::: total hold time 158467224.59us ::: total enter count 17269186
+Thread 275217 ::: total wait time 70940243.11us ::: total hold time 136054915.33us ::: total enter count 14853546
+Thread 275218 ::: total wait time 80573862.00us ::: total hold time 160925514.67us ::: total enter count 17614285
+Thread 275219 ::: total wait time 81682782.39us ::: total hold time 160759580.51us ::: total enter count 17439671
+Thread 275220 ::: total wait time 79785720.47us ::: total hold time 161094450.49us ::: total enter count 17638302
+Thread 275221 ::: total wait time 80278369.06us ::: total hold time 161713135.78us ::: total enter count 17585077
+Thread 275222 ::: total wait time 81825614.12us ::: total hold time 161052644.11us ::: total enter count 17638400
+
+
+
+Total times per thread:
+Thread 278936 ::: total wait time 89383962.05us ::: total hold time 169516846.82us ::: total enter count 16084501
+Thread 278937 ::: total wait time 89811727.03us ::: total hold time 169996873.47us ::: total enter count 16082509
+Thread 278938 ::: total wait time 87234145.93us ::: total hold time 167567778.97us ::: total enter count 15939532
+Thread 278939 ::: total wait time 56595851.06us ::: total hold time 88966697.20us ::: total enter count 8493174
+Thread 278940 ::: total wait time 88511856.12us ::: total hold time 169216535.11us ::: total enter count 16035028
+Thread 278941 ::: total wait time 89212384.93us ::: total hold time 170534225.34us ::: total enter count 16177577
+Thread 278942 ::: total wait time 88586041.97us ::: total hold time 169053701.18us ::: total enter count 16097288
+Thread 278943 ::: total wait time 88676470.38us ::: total hold time 169159404.32us ::: total enter count 16037280
+Thread 278944 ::: total wait time 89258813.57us ::: total hold time 169303921.63us ::: total enter count 16079310
+Thread 278945 ::: total wait time 88680154.69us ::: total hold time 169340113.54us ::: total enter count 16082161
+Thread 278946 ::: total wait time 89199684.95us ::: total hold time 169388576.79us ::: total enter count 16053032
+Thread 278947 ::: total wait time 66725549.72us ::: total hold time 113992906.98us ::: total enter count 10678883
+Thread 278948 ::: total wait time 89497913.54us ::: total hold time 169729921.19us ::: total enter count 16008373
+Thread 278949 ::: total wait time 89281135.84us ::: total hold time 169285333.50us ::: total enter count 15985688
+Thread 278950 ::: total wait time 89116820.51us ::: total hold time 169896305.66us ::: total enter count 16076218
+Thread 278951 ::: total wait time 82469207.25us ::: total hold time 155413318.74us ::: total enter count 14611056
+Thread 278952 ::: total wait time 88570730.91us ::: total hold time 169644359.04us ::: total enter count 16033962
+Thread 278953 ::: total wait time 89221310.68us ::: total hold time 169547393.97us ::: total enter count 16041290
+Thread 278954 ::: total wait time 88990336.67us ::: total hold time 169752798.01us ::: total enter count 16084793
+Thread 278955 ::: total wait time 87896221.86us ::: total hold time 169782582.85us ::: total enter count 16249986
+Thread 278956 ::: total wait time 67320994.71us ::: total hold time 118765947.52us ::: total enter count 11213903
+Thread 278957 ::: total wait time 53189816.62us ::: total hold time 83516207.95us ::: total enter count 7934604
+Thread 278958 ::: total wait time 87718553.89us ::: total hold time 167862372.97us ::: total enter count 15963377
+Thread 278959 ::: total wait time 89240897.53us ::: total hold time 169497540.26us ::: total enter count 16054189
+Thread 278960 ::: total wait time 88224113.71us ::: total hold time 169133331.29us ::: total enter count 16165229
+Thread 278961 ::: total wait time 72062088.08us ::: total hold time 139406037.88us ::: total enter count 13096950
+Thread 278962 ::: total wait time 88686384.38us ::: total hold time 169581179.42us ::: total enter count 16074872
+Thread 278963 ::: total wait time 88717028.56us ::: total hold time 169391291.05us ::: total enter count 16054555
+
+
+Total times per thread:
+Thread 282472 ::: total wait time 71763013.30us ::: total hold time 177166046.24us ::: total enter count 13997181
+Thread 282473 ::: total wait time 71895387.81us ::: total hold time 179798437.01us ::: total enter count 14171127
+Thread 282474 ::: total wait time 72651393.43us ::: total hold time 179532805.45us ::: total enter count 14115982
+Thread 282475 ::: total wait time 72213195.30us ::: total hold time 179584730.31us ::: total enter count 14129187
+Thread 282476 ::: total wait time 71988773.18us ::: total hold time 179493964.45us ::: total enter count 14096524
+Thread 282479 ::: total wait time 71587981.25us ::: total hold time 176855654.16us ::: total enter count 13955643
+Thread 282480 ::: total wait time 72676210.52us ::: total hold time 179754942.02us ::: total enter count 14106750
+Thread 282481 ::: total wait time 72238724.31us ::: total hold time 179842723.98us ::: total enter count 14128319
+Thread 282483 ::: total wait time 72757081.89us ::: total hold time 179227978.66us ::: total enter count 14161836
+Thread 282484 ::: total wait time 72562411.74us ::: total hold time 178463250.41us ::: total enter count 14048795
+Thread 282485 ::: total wait time 72805585.84us ::: total hold time 178852055.97us ::: total enter count 14136195
+Thread 282486 ::: total wait time 72566800.49us ::: total hold time 179443765.34us ::: total enter count 14182283
+Thread 282487 ::: total wait time 71859733.14us ::: total hold time 179270546.83us ::: total enter count 14084793
+Thread 282488 ::: total wait time 72420106.78us ::: total hold time 178701076.02us ::: total enter count 14158097
+Thread 282489 ::: total wait time 72388752.36us ::: total hold time 176245626.72us ::: total enter count 13899370
+Thread 282490 ::: total wait time 63050731.35us ::: total hold time 140636655.09us ::: total enter count 11112691
+Thread 282491 ::: total wait time 71342297.35us ::: total hold time 177084722.45us ::: total enter count 13930919
+Thread 282492 ::: total wait time 70687046.74us ::: total hold time 173701807.63us ::: total enter count 13720724
+Thread 282493 ::: total wait time 71934006.31us ::: total hold time 176781981.49us ::: total enter count 13922233
+Thread 282494 ::: total wait time 71984039.79us ::: total hold time 178701057.40us ::: total enter count 14078060
+Thread 282495 ::: total wait time 72425044.60us ::: total hold time 178719842.46us ::: total enter count 14097590
+Thread 282496 ::: total wait time 72052269.08us ::: total hold time 179026999.34us ::: total enter count 14110764
+Thread 282497 ::: total wait time 57815091.63us ::: total hold time 127573829.90us ::: total enter count 10139455
+Thread 282498 ::: total wait time 71244438.91us ::: total hold time 177638587.99us ::: total enter count 13971132
+Thread 282499 ::: total wait time 72842810.42us ::: total hold time 179477372.19us ::: total enter count 14176036
+Thread 282500 ::: total wait time 73155139.08us ::: total hold time 180112395.83us ::: total enter count 14157367
+Thread 282501 ::: total wait time 72463299.40us ::: total hold time 178866888.95us ::: total enter count 14119942
+Thread 282502 ::: total wait time 72631483.49us ::: total hold time 179465582.21us ::: total enter count 14105946
+Thread 282503 ::: total wait time 72222499.97us ::: total hold time 179874012.92us ::: total enter count 14160404
+
+
