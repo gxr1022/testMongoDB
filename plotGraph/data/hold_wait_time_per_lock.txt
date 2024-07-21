@@ -1,0 +1,837 @@
+Overall per lock analysis
+16 threads
+
+	mutex 31e63fceb730 (0) ::: wait time 130801136.67us ::: hold time 132021589.43us ::: enter count 20687407
+	mutex 31e63fb14178 (0) ::: wait time 58697470.25us ::: hold time 94095776.12us ::: enter count 10344293
+	mutex 31e63f8d2898 (0) ::: wait time 102687120.39us ::: hold time 105589564.62us ::: enter count 20688322
+	mutex 31e63f865c88 (0) ::: wait time 48209006.96us ::: hold time 79051609.40us ::: enter count 10343631
+	mutex 31e63fb11b80 (0) ::: wait time 46648416.89us ::: hold time 66432918.91us ::: enter count 10344302
+	mutex 31e63fc25948 (0) ::: wait time 37515835.33us ::: hold time 57157065.03us ::: enter count 10343746
+	mutex 31e63f600708 (0) ::: wait time 37352652.97us ::: hold time 64345361.65us ::: enter count 10343596
+	mutex 31e63978f228 (0) ::: wait time 64848855.87us ::: hold time 132362679.13us ::: enter count 19583020
+	mutex 31e63f91efd0 (0) ::: wait time 12966158.87us ::: hold time 24072820.84us ::: enter count 3916178
+	mutex 31e63f928750 (0) ::: wait time 2166441.10us ::: hold time 3342365.29us ::: enter count 652687
+	mutex 31e63995fb78 (0) ::: wait time 3990813.11us ::: hold time 6994212.92us ::: enter count 1212470
+	mutex 31e63f9179c8 (0) ::: wait time 1990050.48us ::: hold time 3664213.85us ::: enter count 606354
+	mutex 31e6397be378 (0) ::: wait time 308954.50us ::: hold time 538849.63us ::: enter count 92878
+	mutex 31e63f9176c8 (0) ::: wait time 153951.89us ::: hold time 282607.22us ::: enter count 46441
+	mutex 31e63fc3cae0 (0) ::: wait time 9044177.48us ::: hold time 19969898.64us ::: enter count 2587605
+	mutex 31e63fc3d080 (0) ::: wait time 9032107.15us ::: hold time 19951090.11us ::: enter count 2587722
+	mutex 31e63fc3cbb8 (0) ::: wait time 8949840.64us ::: hold time 19902611.56us ::: enter count 2587607
+	mutex 31e63fc3cc00 (0) ::: wait time 8941630.24us ::: hold time 19950369.00us ::: enter count 2587710
+	mutex 31e63fc3cb28 (0) ::: wait time 9058741.88us ::: hold time 19965323.58us ::: enter count 2587880
+	mutex 31e63fc3cd20 (0) ::: wait time 9066302.47us ::: hold time 19962347.05us ::: enter count 2588041
+	mutex 31e63fc3cfa8 (0) ::: wait time 9072291.71us ::: hold time 19944365.30us ::: enter count 2587647
+	mutex 31e63fc3ccd8 (0) ::: wait time 9063799.98us ::: hold time 19975854.67us ::: enter count 2587951
+	mutex 31e63fc3d1a0 (0) ::: wait time 9091919.15us ::: hold time 19956257.75us ::: enter count 2587721
+	mutex 31e63fc3cdf8 (0) ::: wait time 8990391.72us ::: hold time 19930115.68us ::: enter count 2587662
+	mutex 31e63fc3cc48 (0) ::: wait time 8974406.27us ::: hold time 19924533.04us ::: enter count 2587633
+	mutex 31e63fc3d158 (0) ::: wait time 9105757.41us ::: hold time 19934793.11us ::: enter count 2587759
+	mutex 31e63fc3d1e8 (0) ::: wait time 9091891.23us ::: hold time 19974425.94us ::: enter count 2588046
+	mutex 31e63fc3cf18 (0) ::: wait time 9098437.98us ::: hold time 19936120.34us ::: enter count 2587768
+	mutex 31e63fc3d110 (0) ::: wait time 9094717.84us ::: hold time 19927889.02us ::: enter count 2587879
+	mutex 31e63fc3cd68 (0) ::: wait time 9057357.26us ::: hold time 19931923.10us ::: enter count 2587905
+	mutex 31e63fc3cf60 (0) ::: wait time 9066412.13us ::: hold time 19977142.00us ::: enter count 2587865
+	mutex 31e63fc3d278 (0) ::: wait time 8979363.96us ::: hold time 19906936.96us ::: enter count 2587969
+	mutex 31e63fc3d0c8 (0) ::: wait time 9061372.32us ::: hold time 19932689.95us ::: enter count 2587906
+	mutex 31e63fc3d038 (0) ::: wait time 8946774.05us ::: hold time 19936046.92us ::: enter count 2587657
+	mutex 31e63fc3d2c0 (0) ::: wait time 8967077.03us ::: hold time 19922087.42us ::: enter count 2587587
+	mutex 31e63fc3cc90 (0) ::: wait time 9057942.11us ::: hold time 19938972.85us ::: enter count 2587757
+	mutex 31e63fc3ca98 (0) ::: wait time 9043733.99us ::: hold time 19968700.89us ::: enter count 2587427
+	mutex 31e63fc3ce40 (0) ::: wait time 8973893.09us ::: hold time 19916743.37us ::: enter count 2587966
+	mutex 31e63fc3d230 (0) ::: wait time 9069329.22us ::: hold time 19946498.66us ::: enter count 2587832
+	mutex 31e63fc3cff0 (0) ::: wait time 8924646.78us ::: hold time 19924949.84us ::: enter count 2587816
+	mutex 31e63fc3cb70 (0) ::: wait time 8978495.38us ::: hold time 19974562.91us ::: enter count 2587772
+	mutex 31e63fc3ced0 (0) ::: wait time 9063435.96us ::: hold time 19927172.88us ::: enter count 2587520
+	mutex 31e63fc3cdb0 (0) ::: wait time 8989366.87us ::: hold time 19918623.32us ::: enter count 2587578
+	mutex 31e63fc3ce88 (0) ::: wait time 8998608.86us ::: hold time 19962288.19us ::: enter count 2587499
+	mutex 31e63fc3ca50 (0) ::: wait time 9008340.54us ::: hold time 19960146.30us ::: enter count 2587791
+	mutex 31e63fc3ca08 (0) ::: wait time 8745896.72us ::: hold time 19994664.24us ::: enter count 2587830
+	mutex 31e61cdcf9d8 (#161) ::: wait time 330285.01us ::: hold time 562948.24us ::: enter count 79905
+	mutex 31e61cdce5a8 (#131) ::: wait time 321644.64us ::: hold time 554438.24us ::: enter count 79625
+	mutex 31e63f9c6478 (#86) ::: wait time 277937.97us ::: hold time 277699.45us ::: enter count 39500
+	mutex 31e63faba550 (0) ::: wait time 982400.51us ::: hold time 216719.17us ::: enter count 7835
+	mutex 31e63faba598 (0) ::: wait time 745405.50us ::: hold time 183841.80us ::: enter count 7314
+	mutex 31e63fabae50 (0) ::: wait time 359624.51us ::: hold time 168453.63us ::: enter count 6687
+	mutex 31e61cdcecc8 (#128) ::: wait time 204894.71us ::: hold time 284670.83us ::: enter count 39812
+	mutex 31e63fabae08 (0) ::: wait time 370800.00us ::: hold time 192191.44us ::: enter count 6837
+	mutex 31e62b18f8a8 (#35) ::: wait time 165550.09us ::: hold time 282714.35us ::: enter count 39851
+	mutex 31e62b18fc38 (#171) ::: wait time 161794.79us ::: hold time 281452.15us ::: enter count 39648
+	mutex 31e61cdcfc38 (#33) ::: wait time 165086.40us ::: hold time 282220.50us ::: enter count 39725
+	mutex 31e615346b98 (#47) ::: wait time 163368.18us ::: hold time 281101.24us ::: enter count 39786
+	mutex 31e6249ca478 (#72) ::: wait time 159094.60us ::: hold time 280799.56us ::: enter count 39610
+	mutex 31e62b18fb08 (#159) ::: wait time 154492.30us ::: hold time 273823.14us ::: enter count 39459
+	mutex 31e62b18fd68 (#142) ::: wait time 154402.63us ::: hold time 278155.72us ::: enter count 39421
+	mutex 31e6357f3b08 (#51) ::: wait time 153639.27us ::: hold time 273395.26us ::: enter count 39348
+	mutex 31e6249ca5a8 (#1) ::: wait time 153741.47us ::: hold time 273984.47us ::: enter count 39530
+	mutex 31e6249ca0e8 (0) ::: wait time 37648.90us ::: hold time 67556.68us ::: enter count 9791
+	mutex 31e63f9c6348 (#92) ::: wait time 22290.34us ::: hold time 49608.52us ::: enter count 6768
+	mutex 31e63bfa0110 (0) ::: wait time 36711.33us ::: hold time 99452.38us ::: enter count 10343
+	mutex 31e63fb14f28 (0) ::: wait time 33967.92us ::: hold time 171072.64us ::: enter count 10101
+	mutex 31e6249ca348 (#98) ::: wait time 41977.16us ::: hold time 90542.53us ::: enter count 12397
+	mutex 31e63f8a7818 (0) ::: wait time 2454.71us ::: hold time 9600.77us ::: enter count 454
+	mutex 31e6249ca6d8 (#160) ::: wait time 32915.37us ::: hold time 43038.33us ::: enter count 5699
+	mutex 31e63fb14e48 (0) ::: wait time 834.20us ::: hold time 1691.49us ::: enter count 244
+	mutex 6323c173f400 (0) ::: wait time 860.98us ::: hold time 1596.60us ::: enter count 244
+	mutex 31e63fabd0b8 (0) ::: wait time 463.91us ::: hold time 14118.54us ::: enter count 135
+	mutex 31e6357f32b8 (#136) ::: wait time 67990.63us ::: hold time 135308.70us ::: enter count 18525
+	mutex 31e63f8a77f0 (0) ::: wait time 178.75us ::: hold time 22408.39us ::: enter count 51
+	mutex 31e61cdce6d8 (#56) ::: wait time 19275.59us ::: hold time 43588.87us ::: enter count 5827
+	mutex 31e61cdcfb08 (#16) ::: wait time 18823.90us ::: hold time 42609.67us ::: enter count 5797
+	mutex 31e62b18e348 (#167) ::: wait time 64956.51us ::: hold time 86812.90us ::: enter count 11912
+	mutex 31e62b18f778 (#147) ::: wait time 20745.68us ::: hold time 43974.61us ::: enter count 5985
+	mutex 31e6249ca218 (0) ::: wait time 7665.08us ::: hold time 17433.91us ::: enter count 2309
+	mutex 31e63f9287f0 (0) ::: wait time 2242298.75us ::: hold time 3383333.81us ::: enter count 633370
+	mutex 31e63f91f0a0 (0) ::: wait time 13323331.12us ::: hold time 24218153.04us ::: enter count 3800323
+	mutex 31e6397bfb78 (0) ::: wait time 4423086.27us ::: hold time 7624068.10us ::: enter count 1266888
+	mutex 31e63978fb28 (0) ::: wait time 56697205.81us ::: hold time 112882309.55us ::: enter count 16146846
+	mutex 31e63f917b48 (0) ::: wait time 717552.38us ::: hold time 1300847.86us ::: enter count 207133
+	mutex 31e6357f3e98 (#126) ::: wait time 284496.68us ::: hold time 273656.84us ::: enter count 38467
+	mutex 31e6357f3778 (#143) ::: wait time 206428.86us ::: hold time 273599.09us ::: enter count 38768
+	mutex 31e615346808 (#172) ::: wait time 153597.72us ::: hold time 277991.66us ::: enter count 38934
+	mutex 31e6357f3d68 (#117) ::: wait time 143860.37us ::: hold time 270687.29us ::: enter count 38735
+	mutex 31e61cdcef28 (#83) ::: wait time 143430.69us ::: hold time 271733.17us ::: enter count 38655
+	mutex 31e6249cb778 (#129) ::: wait time 143090.20us ::: hold time 274629.70us ::: enter count 38635
+	mutex 31e6357f2b98 (#157) ::: wait time 143109.80us ::: hold time 273180.68us ::: enter count 38591
+	mutex 31e6249cb8a8 (#114) ::: wait time 143432.02us ::: hold time 272536.82us ::: enter count 38578
+	mutex 31e6357f3648 (0) ::: wait time 136178.76us ::: hold time 260803.40us ::: enter count 37458
+	mutex 31e63faba5e0 (0) ::: wait time 167825.84us ::: hold time 189568.06us ::: enter count 6581
+	mutex 31e63fabb630 (0) ::: wait time 186631.49us ::: hold time 176194.49us ::: enter count 6522
+	mutex 31e6153466d8 (#57) ::: wait time 39244.24us ::: hold time 67747.03us ::: enter count 8992
+	mutex 31e6249cb648 (#19) ::: wait time 32923.36us ::: hold time 67670.39us ::: enter count 8908
+	mutex 31e62b18f518 (#30) ::: wait time 106713.73us ::: hold time 205147.77us ::: enter count 26320
+	mutex 31e6153465a8 (#31) ::: wait time 32363.07us ::: hold time 68606.10us ::: enter count 8901
+	mutex 31e61cdcedf8 (#41) ::: wait time 36213.89us ::: hold time 68832.10us ::: enter count 9079
+	mutex 31e6357f2a68 (#121) ::: wait time 53119.94us ::: hold time 66104.70us ::: enter count 8948
+	mutex 31e62b18f2b8 (0) ::: wait time 3401.46us ::: hold time 7128.37us ::: enter count 959
+	mutex 31e63f91f170 (0) ::: wait time 13092184.07us ::: hold time 23939479.73us ::: enter count 3840754
+	mutex 31e63f928890 (0) ::: wait time 2183610.78us ::: hold time 3369725.70us ::: enter count 640397
+	mutex 31e639790428 (0) ::: wait time 50989986.34us ::: hold time 102572708.85us ::: enter count 15077438
+	mutex 31e63946d378 (0) ::: wait time 3383380.01us ::: hold time 5869311.99us ::: enter count 1005186
+	mutex 31e63f95e048 (0) ::: wait time 1685404.76us ::: hold time 3069708.99us ::: enter count 502605
+	mutex 31e62b18e938 (0) ::: wait time 125911.02us ::: hold time 151198.72us ::: enter count 20251
+	mutex 31e6153460e8 (#108) ::: wait time 151328.52us ::: hold time 273560.62us ::: enter count 37933
+	mutex 31e61cdcfe98 (#18) ::: wait time 92178.65us ::: hold time 152692.84us ::: enter count 20205
+	mutex 31e6357f26d8 (#63) ::: wait time 143996.69us ::: hold time 270254.16us ::: enter count 37834
+	mutex 31e61cdcf3e8 (#87) ::: wait time 133932.27us ::: hold time 270169.23us ::: enter count 37842
+	mutex 31e62b18ea68 (#96) ::: wait time 69986.80us ::: hold time 153951.98us ::: enter count 20328
+	mutex 31e62b18e808 (0) ::: wait time 102797.01us ::: hold time 210972.70us ::: enter count 29891
+	mutex 31e63faba8b0 (0) ::: wait time 91362.65us ::: hold time 165353.19us ::: enter count 6411
+	mutex 31e63fabb828 (0) ::: wait time 87624.80us ::: hold time 190900.87us ::: enter count 6425
+	mutex 31e639790d28 (0) ::: wait time 64648503.44us ::: hold time 132152583.42us ::: enter count 19656812
+	mutex 31e63f91f240 (0) ::: wait time 12911597.17us ::: hold time 24033342.22us ::: enter count 3931929
+	mutex 31e63f90bab0 (0) ::: wait time 2157754.70us ::: hold time 3334043.85us ::: enter count 655286
+	mutex 31e63946eb78 (0) ::: wait time 4283438.15us ::: hold time 7589801.85us ::: enter count 1310571
+	mutex 31e63f95e4c8 (0) ::: wait time 2135551.31us ::: hold time 3903944.70us ::: enter count 655441
+	mutex 31e61cdce808 (#145) ::: wait time 20780.76us ::: hold time 46202.23us ::: enter count 6338
+	mutex 31e6249ca808 (#116) ::: wait time 20116.21us ::: hold time 44730.17us ::: enter count 6108
+	mutex 31e63f91f310 (0) ::: wait time 12871728.23us ::: hold time 24209244.11us ::: enter count 3934118
+	mutex 31e63f928930 (0) ::: wait time 2154521.72us ::: hold time 3401635.45us ::: enter count 655668
+	mutex 31e639791628 (0) ::: wait time 62619541.27us ::: hold time 128647163.17us ::: enter count 19120416
+	mutex 31e639470378 (0) ::: wait time 4145234.55us ::: hold time 7330104.64us ::: enter count 1274722
+	mutex 31e63f95e948 (0) ::: wait time 2066127.12us ::: hold time 3912771.96us ::: enter count 637377
+	mutex 31e6357f2218 (#48) ::: wait time 29146.45us ::: hold time 66036.19us ::: enter count 8959
+	mutex 31e6394f6028 (0) ::: wait time 65110764.30us ::: hold time 132672601.86us ::: enter count 19508865
+	mutex 31e63f91f3e0 (0) ::: wait time 13014379.22us ::: hold time 24114382.53us ::: enter count 3901625
+	mutex 31e63f928b10 (0) ::: wait time 2170390.54us ::: hold time 3381524.67us ::: enter count 650295
+	mutex 31e639471b78 (0) ::: wait time 4318809.91us ::: hold time 7626478.85us ::: enter count 1300751
+	mutex 31e63f95edc8 (0) ::: wait time 2156405.50us ::: hold time 3989667.65us ::: enter count 650287
+	mutex 31e6394f6928 (0) ::: wait time 65085802.19us ::: hold time 132342470.09us ::: enter count 19395035
+	mutex 31e63f91f4b0 (0) ::: wait time 13014926.07us ::: hold time 24117730.18us ::: enter count 3879328
+	mutex 31e63f994750 (0) ::: wait time 2171999.64us ::: hold time 3357524.01us ::: enter count 646494
+	mutex 31e6395eb378 (0) ::: wait time 4312539.48us ::: hold time 7571596.91us ::: enter count 1293190
+	mutex 31e63f95f248 (0) ::: wait time 2154514.40us ::: hold time 3964566.77us ::: enter count 646508
+	mutex 31e63f91f580 (0) ::: wait time 13001086.70us ::: hold time 24277938.14us ::: enter count 3869161
+	mutex 31e63f928ed0 (0) ::: wait time 2169389.72us ::: hold time 3359581.57us ::: enter count 644716
+	mutex 31e6394f7228 (0) ::: wait time 25345971.54us ::: hold time 51622299.57us ::: enter count 7448007
+	mutex 31e63f95f848 (0) ::: wait time 842159.71us ::: hold time 1547104.23us ::: enter count 248279
+	mutex 31e639388b78 (0) ::: wait time 1682249.47us ::: hold time 2957475.34us ::: enter count 496544
+	mutex 31e63fabd1a0 (0) ::: wait time 12.52us ::: hold time 32.36us ::: enter count 4
+	mutex 31e63bfa00d0 (0) ::: wait time 3.78us ::: hold time 73.46us ::: enter count 1
+	mutex 31e63f91f650 (0) ::: wait time 13135872.36us ::: hold time 24140141.57us ::: enter count 3812707
+	mutex 31e63f929290 (0) ::: wait time 2191641.41us ::: hold time 3400838.88us ::: enter count 635468
+	mutex 31e6394f7b28 (0) ::: wait time 49101049.71us ::: hold time 98779291.24us ::: enter count 14204717
+	mutex 31e63f95fcc8 (0) ::: wait time 1632204.20us ::: hold time 2968290.13us ::: enter count 473512
+	mutex 31e6393f1378 (0) ::: wait time 3260713.01us ::: hold time 5697591.09us ::: enter count 947000
+	mutex 31e63f91f8c0 (0) ::: wait time 12899540.16us ::: hold time 24235890.48us ::: enter count 3909518
+	mutex 31e6393f5b78 (0) ::: wait time 4275998.41us ::: hold time 7540821.31us ::: enter count 1303046
+	mutex 31e63f929470 (0) ::: wait time 1970954.99us ::: hold time 3141373.24us ::: enter count 594883
+	mutex 31e6394f8428 (0) ::: wait time 39123012.36us ::: hold time 79918371.85us ::: enter count 11763948
+	mutex 31e63f9741c8 (0) ::: wait time 1292071.21us ::: hold time 2381519.67us ::: enter count 392150
+	mutex 31e63f91f990 (0) ::: wait time 12933887.64us ::: hold time 23985423.63us ::: enter count 3844365
+	mutex 31e63f929830 (0) ::: wait time 2161474.82us ::: hold time 3411692.93us ::: enter count 640728
+	mutex 31e638ac8378 (0) ::: wait time 3855931.13us ::: hold time 6785056.82us ::: enter count 1154797
+	mutex 31e6394f8d28 (0) ::: wait time 26678423.96us ::: hold time 54332832.57us ::: enter count 8093652
+	mutex 31e63f974648 (0) ::: wait time 880624.07us ::: hold time 1615197.20us ::: enter count 269802
+	mutex 31e6394f9628 (0) ::: wait time 64921772.32us ::: hold time 132103805.93us ::: enter count 19509176
+	mutex 31e63f91fa60 (0) ::: wait time 12976294.06us ::: hold time 24072125.38us ::: enter count 3902001
+	mutex 31e63f929ab0 (0) ::: wait time 2167334.55us ::: hold time 3355956.56us ::: enter count 650412
+	mutex 31e638ac9b78 (0) ::: wait time 4306069.83us ::: hold time 7602726.29us ::: enter count 1300626
+	mutex 31e63f974948 (0) ::: wait time 2146350.46us ::: hold time 3947349.14us ::: enter count 650172
+	mutex 31e6249cadf8 (#113) ::: wait time 11724.35us ::: hold time 25035.08us ::: enter count 3389
+	mutex 31e63f91fb30 (0) ::: wait time 12874476.11us ::: hold time 23924229.99us ::: enter count 3939325
+	mutex 31e63f929b50 (0) ::: wait time 2143749.96us ::: hold time 3358826.93us ::: enter count 656350
+	mutex 31e6395cc028 (0) ::: wait time 46823841.67us ::: hold time 95780244.90us ::: enter count 14314580
+	mutex 31e6395c7378 (0) ::: wait time 3105742.63us ::: hold time 5480347.52us ::: enter count 954325
+	mutex 31e63f974f48 (0) ::: wait time 1546594.55us ::: hold time 2856492.62us ::: enter count 477174
+	mutex 31e6395cc928 (0) ::: wait time 66028328.47us ::: hold time 132593334.11us ::: enter count 19053235
+	mutex 31e63f91fc00 (0) ::: wait time 13174738.60us ::: hold time 24237558.41us ::: enter count 3811160
+	mutex 31e63f929dd0 (0) ::: wait time 2208392.90us ::: hold time 3392282.24us ::: enter count 635085
+	mutex 31e6388cdb78 (0) ::: wait time 4382838.69us ::: hold time 7624838.74us ::: enter count 1270427
+	mutex 31e63f975248 (0) ::: wait time 626873.39us ::: hold time 1154124.30us ::: enter count 184410
+	mutex 31e6395cd228 (0) ::: wait time 64588976.62us ::: hold time 132416182.46us ::: enter count 19734248
+	mutex 31e63f97c3a0 (0) ::: wait time 12872970.16us ::: hold time 23960385.01us ::: enter count 3947036
+	mutex 31e63f929e70 (0) ::: wait time 2150217.11us ::: hold time 3307584.81us ::: enter count 657900
+	mutex 31e638939378 (0) ::: wait time 4274134.38us ::: hold time 7488124.47us ::: enter count 1315639
+	mutex 31e63f975848 (0) ::: wait time 2132710.62us ::: hold time 3949085.77us ::: enter count 657717
+	mutex 31e6395cdb28 (0) ::: wait time 65002276.13us ::: hold time 130928460.90us ::: enter count 19133312
+	mutex 31e63f97c470 (0) ::: wait time 12954382.13us ::: hold time 24146994.45us ::: enter count 3826668
+	mutex 31e63f994110 (0) ::: wait time 2159649.56us ::: hold time 3359904.08us ::: enter count 637608
+	mutex 31e6392ef378 (0) ::: wait time 4306760.08us ::: hold time 7552981.60us ::: enter count 1275770
+	mutex 31e63f975b48 (0) ::: wait time 459070.18us ::: hold time 848851.17us ::: enter count 141179
+	mutex 31e62b18ef28 (#32) ::: wait time 166324.68us ::: hold time 292677.74us ::: enter count 40075
+	mutex 31e62b18f058 (#62) ::: wait time 136483.99us ::: hold time 279129.21us ::: enter count 37660
+	mutex 31e62b18edf8 (#149) ::: wait time 135068.50us ::: hold time 259937.11us ::: enter count 37657
+	mutex 31e62b18ecc8 (0) ::: wait time 113069.48us ::: hold time 161802.64us ::: enter count 22245
+	mutex 31e63f9c7188 (0) ::: wait time 105249.83us ::: hold time 122798.74us ::: enter count 17813
+	mutex 31e63fabc0e0 (0) ::: wait time 50700.53us ::: hold time 191293.00us ::: enter count 6356
+	mutex 31e63fabb870 (0) ::: wait time 52247.33us ::: hold time 165011.73us ::: enter count 6321
+
+
+Contention analysis
+
+
+Mutex 761f7ddb8914 (0) Count=6
+Mutex 75f2844a88f8 (0) Count=1
+Mutex 31e63fb11b80 (0) Count=93207
+Mutex 595f75281ed8 (0) Count=51
+Mutex 31e63f9c6a68 (0) Count=9
+Mutex 793cbf57b8f8 (0) Count=5
+Mutex 31e61cdcf9d8 (#161) Count=260
+Mutex c000641148 (0) Count=2
+Mutex 761f7ece5914 (0) Count=13
+Mutex 31e63fc3cc90 (0) Count=46
+Mutex 583fff8ffbb8 (0) Count=2
+Mutex 31e62b18f9d8 (0) Count=96
+Mutex 31e615346b98 (#47) Count=288
+Mutex 6e36410 (0) Count=2
+Mutex 31e66e3f1648 (#53) Count=280
+Mutex 31e60c05d3e8 (#94) Count=150
+Mutex 31e66390adf8 (0) Count=187
+Mutex 31e63f9c6df8 (0) Count=104
+Mutex 7ffcfaed47f0 (0) Count=6
+Mutex 583ffecab318 (0) Count=24
+Mutex 583ffecaa298 (0) Count=18
+Mutex 595f7520be88 (0) Count=52
+Mutex 31e60c05c938 (#82) Count=73
+Mutex 31e6153460e8 (#108) Count=19
+Mutex 31e6676e6df8 (0) Count=358
+Mutex 31e6491e5b08 (0) Count=127
+Mutex 7ffc98cb9ea0 (0) Count=1
+Mutex 595f740a1408 (0) Count=13
+Mutex 31e66e3f0218 (0) Count=347
+Mutex 6abbaa0 (0) Count=8
+Mutex 31e6394f8d28 (0) Count=37
+Mutex 31e63f8e6e88 (0) Count=498
+Mutex 595f740a0228 (0) Count=15
+Mutex c000101548 (0) Count=3
+Mutex 31e66390bb08 (0) Count=275
+Mutex 761f7eeeb914 (0) Count=4
+Mutex 5746aa0 (0) Count=5
+Mutex c0006c1948 (0) Count=1
+Mutex 31e63f91f650 (0) Count=13
+Mutex 31e63978fb28 (0) Count=90
+Mutex 31e60c05dc38 (#148) Count=80
+Mutex 31e6068ce218 (#67) Count=187
+Mutex 6892640 (0) Count=1
+Mutex c000100948 (0) Count=2
+Mutex c0006c1548 (0) Count=1
+Mutex 31e6068cf188 (#168) Count=98
+Mutex 31e6761b8f28 (0) Count=175
+Mutex 31e63f91f0a0 (0) Count=12
+Mutex c000701148 (0) Count=2
+Mutex 761f7e7d6914 (0) Count=11
+Mutex 31e6068cf9d8 (#118) Count=159
+Mutex 66b0aa0 (0) Count=4
+Mutex 794a78abe210 (0) Count=901
+Mutex c000700948 (0) Count=6
+Mutex c000700148 (0) Count=2
+Mutex 595f74f666b8 (0) Count=10
+Mutex 31e63fc3d2c0 (0) Count=38
+Mutex 31e6491e4b98 (0) Count=29
+Mutex 31e639791628 (0) Count=80
+Mutex 31e62b18e808 (0) Count=16
+Mutex c000a80948 (0) Count=3
+Mutex 31e66e3f06d8 (0) Count=96
+Mutex 31e66390bc38 (0) Count=213
+Mutex 31e66e3f1d68 (#9) Count=118
+Mutex c000641948 (0) Count=2
+Mutex 31e63fc25948 (0) Count=18207
+Mutex 670f730 (0) Count=1
+Mutex 595f740a0388 (0) Count=19
+Mutex 31e676aec0e8 (0) Count=473
+Mutex 31e601f9e348 (0) Count=157
+Mutex 31e63f8d2898 (0) Count=48707
+Mutex 595f752827e8 (0) Count=48
+Mutex 31e6249caa68 (#24) Count=547
+Mutex 31e6676e6348 (0) Count=134
+Mutex 31e66e3f0478 (#110) Count=128
+Mutex 595f740a04e8 (0) Count=14
+Mutex 31e63bfa0190 (0) Count=6
+Mutex 6e3bc50 (0) Count=1
+Mutex 31e6395cd228 (0) Count=67
+Mutex 31e6068ce0e8 (#146) Count=380
+Mutex 761f7e9dc914 (0) Count=4
+Mutex 6df6ab0 (0) Count=12
+Mutex 31e6676e7e98 (#99) Count=383
+Mutex 583ffecab1b8 (0) Count=14
+Mutex 583ffecaaef8 (0) Count=8
+Mutex 31e66e3f18a8 (0) Count=175
+Mutex 31e63fc3d080 (0) Count=45
+Mutex 31e63fb14178 (0) Count=145322
+Mutex 73d4c88 (0) Count=1
+Mutex 70815f8 (0) Count=8
+Mutex c000100148 (0) Count=2
+Mutex c0000c0948 (0) Count=1
+Mutex 595f79b0db48 (0) Count=39
+Mutex 5faf6a8 (0) Count=6436
+Mutex 595f7409f888 (0) Count=18
+Mutex 595f740a0d28 (0) Count=15
+Mutex 583fff9b1408 (0) Count=63
+Mutex 583ffecac564 (0) Count=33
+Mutex 31e6068cf518 (#88) Count=139
+Mutex 595f743e5878 (0) Count=200
+Mutex 595f740a1ae8 (0) Count=13
+Mutex 31e60c05db08 (#156) Count=70
+Mutex 761f7e5d0914 (0) Count=6
+Mutex 31e66e3f0f28 (#38) Count=14
+Mutex 595f740a1148 (0) Count=19
+Mutex 31e63f906df8 (0) Count=285
+Mutex 31e66e3f1518 (#39) Count=369
+Mutex 31e63f600708 (0) Count=7802
+Mutex 31e676aedb08 (0) Count=195
+Mutex 595f743d5420 (0) Count=204
+Mutex 31e6357f3d68 (#117) Count=160
+Mutex 31e63f91f3e0 (0) Count=17
+Mutex 31e62b18f3e8 (0) Count=268
+Mutex 31e63f8e6808 (0) Count=1
+Mutex c000a80d48 (0) Count=3
+Mutex 31e6357f2b98 (#157) Count=234
+Mutex 793cc4dff8f8 (0) Count=4
+Mutex 31e63f907d68 (0) Count=483
+Mutex c0002b1548 (0) Count=1
+Mutex 31e6394f9628 (0) Count=84
+Mutex 31e66390a218 (0) Count=1
+Mutex 31e6491e53e8 (0) Count=289
+Mutex 58400146b288 (0) Count=31
+Mutex 31e63fc3d0c8 (0) Count=38
+Mutex 31e62b18e348 (#167) Count=230
+Mutex 583ffecaaad8 (0) Count=16
+Mutex 31e6068cfd68 (#46) Count=174
+Mutex 595f740a1988 (0) Count=10
+Mutex 31e6395cc928 (0) Count=68
+Mutex 583ffeca9bb8 (0) Count=16
+Mutex 7ffc80710a90 (0) Count=1
+Mutex 583ffeca9d18 (0) Count=17
+Mutex c0006c0d48 (0) Count=1
+Mutex 31e63fabc0e0 (0) Count=23
+Mutex 31e615346cc8 (#89) Count=293
+Mutex 761f7f2f7914 (0) Count=3
+Mutex 583ffecaad98 (0) Count=14
+Mutex 31e61cdcfb08 (#16) Count=236
+Mutex 761f7f807914 (0) Count=5
+Mutex c000580548 (0) Count=1
+Mutex 761f7ebe2914 (0) Count=10
+Mutex 588af61e2a58 (0) Count=4
+Mutex 31e615347b08 (#14) Count=80
+Mutex 31e6249cb778 (#129) Count=48
+Mutex 31e60c05c218 (#154) Count=308
+Mutex 624d24664d40 (0) Count=2
+Mutex 75f2845744d8 (0) Count=1
+Mutex 31e63fc3ce40 (0) Count=33
+Mutex c000100548 (0) Count=1
+Mutex 31e615347648 (#45) Count=97
+Mutex 31e62b18e5a8 (#162) Count=235
+Mutex 31e6249cbb08 (#60) Count=113
+Mutex 719018000030 (0) Count=2
+Mutex 31e676aecb98 (#166) Count=252
+Mutex 31e6491e58a8 (0) Count=359
+Mutex 31e6249cb8a8 (#114) Count=318
+Mutex 595f740a0fe8 (0) Count=15
+Mutex c00037b548 (0) Count=1
+Mutex 31e676aed778 (0) Count=123
+Mutex 31e6761b9648 (0) Count=59
+Mutex c000b00d48 (0) Count=3
+Mutex c0006c0948 (0) Count=2
+Mutex 31e6357f33e8 (0) Count=309
+Mutex 31e6386c2028 (0) Count=5
+Mutex 31e6676e7058 (#133) Count=116
+Mutex 583ffecabb58 (0) Count=13
+Mutex 6efbf08 (0) Count=1
+Mutex 31e66390a6d8 (0) Count=22
+Mutex c000601148 (0) Count=1
+Mutex 31e61cdcef28 (#83) Count=444
+Mutex 761f7efee914 (0) Count=7
+Mutex 583ffecaac38 (0) Count=18
+Mutex 31e63f91f8c0 (0) Count=20
+Mutex 747f4e5758f8 (0) Count=4
+Mutex 31e676aed8a8 (0) Count=129
+Mutex 595f740a1e14 (0) Count=13
+Mutex 583ffecac0d8 (0) Count=19
+Mutex 31e66390be98 (0) Count=117
+Mutex 595f7409f9e8 (0) Count=9
+Mutex 5840009e9ba8 (0) Count=53
+Mutex 31e676aec218 (0) Count=24
+Mutex 31e6491e4478 (0) Count=23
+Mutex 6bb8248 (0) Count=1
+Mutex 794a7169d8f8 (0) Count=48
+Mutex c000b01948 (0) Count=4
+Mutex 61deba8 (0) Count=8
+Mutex 31e61cdcf188 (#3) Count=687
+Mutex 31e63f91fb30 (0) Count=16
+Mutex 31e6249cab98 (#7) Count=270
+Mutex 595f7409fca8 (0) Count=19
+Mutex 7ffd7d8ed610 (0) Count=9
+Mutex 595f7a540248 (0) Count=58
+Mutex 7192d38 (0) Count=1
+Mutex 761f7e1c4914 (0) Count=4
+Mutex 31e63f91f990 (0) Count=16
+Mutex 794a718a38f8 (0) Count=60
+Mutex c000561148 (0) Count=3
+Mutex 31e6386c5628 (0) Count=7
+Mutex 595f751b0f18 (0) Count=32
+Mutex 31e63fc3cae0 (0) Count=33
+Mutex 595f75a82158 (0) Count=33
+Mutex 595f752467c8 (0) Count=53
+Mutex 31e66390af28 (0) Count=245
+Mutex 72360b8 (0) Count=8
+Mutex 761f7ede8914 (0) Count=3
+Mutex 31e61cdcf3e8 (#87) Count=17
+Mutex 31e63f8add08 (0) Count=353
+Mutex 761f7e6d3914 (0) Count=8
+Mutex 31e60c05d2b8 (#101) Count=471
+Mutex 595f75f736a8 (0) Count=514
+Mutex 583ffecaa138 (0) Count=10
+Mutex 747f4e3728f8 (0) Count=3
+Mutex 31e63fc3cf18 (0) Count=43
+Mutex 583ffecab478 (0) Count=13
+Mutex 595f7525cf78 (0) Count=35
+Mutex 583ffecac238 (0) Count=18
+Mutex 31e63fc3ca98 (0) Count=45
+Mutex 31e63fc3d1a0 (0) Count=48
+Mutex 7ffcfaed7d80 (0) Count=1
+Mutex 31e6068cea68 (#138) Count=125
+Mutex 31e676aec5a8 (#106) Count=446
+Mutex 7ffc98cb9460 (0) Count=2
+Mutex 31e6491e4f28 (0) Count=236
+Mutex 31e6357f3648 (0) Count=150
+Mutex 595f740a00c8 (0) Count=19
+Mutex 31e6249ca5a8 (#1) Count=197
+Mutex 31e615347d68 (#100) Count=608
+Mutex 31e6491e52b8 (0) Count=346
+Mutex 31e6357f26d8 (#63) Count=10
+Mutex 31e6761b9c38 (0) Count=196
+Mutex 31e63fc3ccd8 (0) Count=39
+Mutex 6c5d3b8 (0) Count=3
+Mutex 31e6491e4348 (0) Count=175
+Mutex 31e61cdcf518 (#105) Count=151
+Mutex 58400126c558 (0) Count=48
+Mutex 595f7409fb48 (0) Count=10
+Mutex 31e6357f2cc8 (0) Count=386
+Mutex 583ffecab898 (0) Count=11
+Mutex 6de0c60 (0) Count=7
+Mutex 71b45d8 (0) Count=8
+Mutex 31e63faba5e0 (0) Count=174
+Mutex 31e62b18f518 (#30) Count=1
+Mutex 31e676aeccc8 (#78) Count=482
+Mutex 31e615346348 (#4) Count=308
+Mutex 5ff0168 (0) Count=1
+Mutex 31e66390ab98 (0) Count=132
+Mutex c000700548 (0) Count=1
+Mutex 31e6249ca6d8 (#160) Count=491
+Mutex 31e63fabae50 (0) Count=281
+Mutex 31e6153472b8 (#135) Count=132
+Mutex 588af61e2a48 (0) Count=1
+Mutex 6323c181a9e8 (0) Count=106
+Mutex 6df8220 (0) Count=2
+Mutex c000701548 (0) Count=1
+Mutex 595f75065aa8 (0) Count=45
+Mutex 31e63f8e6a08 (0) Count=38
+Mutex 31e63fc3cd20 (0) Count=37
+Mutex 583ffecab738 (0) Count=15
+Mutex 31e63f91efd0 (0) Count=17
+Mutex 7b0aa85a1100 (0) Count=157
+Mutex 595f7409f728 (0) Count=16
+Mutex 76a81de1ac80 (0) Count=33
+Mutex 31e60c05de98 (#104) Count=278
+Mutex 761f7debb914 (0) Count=4
+Mutex 761f7e0c1914 (0) Count=9
+Mutex 6323c18199e8 (0) Count=1067
+Mutex 31e6153473e8 (#137) Count=1
+Mutex 6e35900 (0) Count=15
+Mutex c000561548 (0) Count=4
+Mutex 31e615346478 (#20) Count=619
+Mutex 583ffecaa978 (0) Count=13
+Mutex 58400178ea78 (0) Count=5
+Mutex 31e6357f3778 (#143) Count=122
+Mutex 761f7e4cd914 (0) Count=3
+Mutex 68f2bb8 (0) Count=1
+Mutex 31e62b18fe98 (#70) Count=277
+Mutex 6eb42d8 (0) Count=1
+Mutex 31e63f89fd68 (0) Count=16
+Mutex 595f740a0648 (0) Count=18
+Mutex 31e6491e4808 (0) Count=22
+Mutex 31e66e3f05a8 (#170) Count=18
+Mutex 31e63f91f310 (0) Count=12
+Mutex 31e63fc3d1e8 (0) Count=46
+Mutex 588af61e2978 (0) Count=2
+Mutex c0006c0148 (0) Count=1
+Mutex 595f740a12a8 (0) Count=16
+Mutex 31e63f91fc00 (0) Count=25
+Mutex 761f7fa0d914 (0) Count=16
+Mutex 31e66390a348 (0) Count=22
+Mutex 583ffeca9e78 (0) Count=7
+Mutex 31e6676e7188 (#22) Count=332
+Mutex 583ffecaa3f8 (0) Count=19
+Mutex 31e63f618aa8 (0) Count=1
+Mutex 31e676aecdf8 (0) Count=391
+Mutex 31e6153478a8 (#103) Count=155
+Mutex 595f7409f468 (0) Count=13
+Mutex 31e615346a68 (#54) Count=183
+Mutex 31e6357f20e8 (0) Count=67
+Mutex 31e63fc3ca08 (0) Count=40
+Mutex 31e6068ce938 (#26) Count=176
+Mutex 31e6386c3b28 (0) Count=22
+Mutex 6323c18176c0 (0) Count=162
+Mutex 31e6395cc028 (0) Count=61
+Mutex 6f190e8 (0) Count=1
+Mutex 31e60c05cf28 (#42) Count=388
+Mutex 31e63fc3cc00 (0) Count=51
+Mutex 5840002e1688 (0) Count=46
+Mutex 31e6491e5058 (0) Count=182
+Mutex 31e63f9c73e8 (0) Count=1
+Mutex 31e63f865c88 (0) Count=96237
+Mutex 5840022bd6e8 (0) Count=49
+Mutex 31e6357f2a68 (#121) Count=475
+Mutex 761f7f1f4914 (0) Count=5
+Mutex 6e363d8 (0) Count=33
+Mutex 31e6395cdb28 (0) Count=79
+Mutex 31e6249cb9d8 (#173) Count=1
+Mutex 595f7630fe78 (0) Count=40
+Mutex 730a015a1100 (0) Count=92
+Mutex 31e63fc3cb28 (0) Count=32
+Mutex 31e62b18f2b8 (0) Count=162
+Mutex 31e6761b9e98 (0) Count=19
+Mutex 31e6491e4a68 (0) Count=37
+Mutex 761f7d89f424 (0) Count=7
+Mutex 31e63faba8b0 (0) Count=76
+Mutex 31e66e3f13e8 (#11) Count=421
+Mutex 31e62b18f778 (#147) Count=88
+Mutex 31e63fc3cff0 (0) Count=46
+Mutex 31e61cdcecc8 (#128) Count=247
+Mutex 7ffc98cb9320 (0) Count=3
+Mutex 5b6a958 (0) Count=2
+Mutex 31e60c05c6d8 (#61) Count=185
+Mutex 624d2464d758 (0) Count=2
+Mutex 31e61cdcf2b8 (#111) Count=148
+Mutex 583ffeca9a58 (0) Count=18
+Mutex 59fd048 (0) Count=2
+Mutex 31e6761b85a8 (0) Count=143
+Mutex 624d2464c148 (0) Count=2
+Mutex 761f7d9ac964 (0) Count=949
+Mutex c000600548 (0) Count=1
+Mutex c000b00148 (0) Count=4
+Mutex 31e66e3f1188 (0) Count=21
+Mutex 31e61cdce5a8 (#131) Count=281
+Mutex 6ee1fa8 (0) Count=15
+Mutex 31e62b18fb08 (#159) Count=246
+Mutex c000100d48 (0) Count=2
+Mutex 31e6249cb058 (#12) Count=25
+Mutex 31e676aed648 (#124) Count=15
+Mutex 31e60c05c808 (#153) Count=328
+Mutex 31e6357f3e98 (#126) Count=58
+Mutex 31e615347518 (#49) Count=87
+Mutex 31e6761b8348 (0) Count=177
+Mutex 31e63fabb870 (0) Count=29
+Mutex 31e63f9c7648 (0) Count=4
+Mutex 31e6676e6cc8 (0) Count=182
+Mutex 31e60c05cb98 (#58) Count=335
+Mutex 595f740a1828 (0) Count=14
+Mutex 31e6249cadf8 (#113) Count=17
+Mutex 624d2464d678 (0) Count=1
+Mutex 31e63f8e6388 (0) Count=1
+Mutex 31e63f618b48 (0) Count=1
+Mutex 57d2a348c148 (0) Count=1
+Mutex 31e6491e4938 (0) Count=1
+Mutex 31e66390a478 (0) Count=297
+Mutex 595f740a1568 (0) Count=19
+Mutex 31e6676e6478 (0) Count=93
+Mutex 31e63869a428 (0) Count=19
+Mutex 31e63fc3ce88 (0) Count=34
+Mutex 31e638699228 (0) Count=34
+Mutex 6e86008 (0) Count=1
+Mutex 31e62b18f8a8 (#35) Count=370
+Mutex 5d25678 (0) Count=3
+Mutex 583ffeca98f8 (0) Count=9
+Mutex 31e63f8e6788 (0) Count=4
+Mutex 31e63883e028 (0) Count=22
+Mutex 31e6068cf2b8 (#37) Count=230
+Mutex 583fff0ccc38 (0) Count=36
+Mutex 31e6357f3b08 (#51) Count=307
+Mutex 31e615346218 (#97) Count=129
+Mutex 31e6761b9188 (0) Count=60
+Mutex 583ffecac398 (0) Count=16
+Mutex 31e63fc3d158 (0) Count=41
+Mutex 793cc639f210 (0) Count=186
+Mutex 57d2a34a4d40 (0) Count=1
+Mutex c000900948 (0) Count=3
+Mutex 747f557a9210 (0) Count=145
+Mutex 761f7f704914 (0) Count=10
+Mutex 54e87a8 (0) Count=61
+Mutex 31e61cdcf778 (#5) Count=293
+Mutex 595f751a2488 (0) Count=51
+Mutex 747f541ff8f8 (0) Count=3
+Mutex 583ffee45498 (0) Count=1
+Mutex c000600148 (0) Count=3
+Mutex 31e6394f6028 (0) Count=58
+Mutex 31e63f91fa60 (0) Count=20
+Mutex 54e8680 (0) Count=2313
+Mutex 31e66e3f0348 (0) Count=27
+Mutex 31e61cdcfe98 (#18) Count=101
+Mutex 31e6068cfe98 (#36) Count=20
+Mutex 595f7505d088 (0) Count=33
+Mutex 79e72341ac80 (0) Count=36
+Mutex 31e6153465a8 (#31) Count=189
+Mutex 31e66390b648 (0) Count=169
+Mutex 6e3b2a8 (0) Count=1
+Mutex 31e61cdcf648 (#28) Count=183
+Mutex c000a81948 (0) Count=2
+Mutex 57a1aa0 (0) Count=13
+Mutex 595f744b5c18 (0) Count=1
+Mutex c000901548 (0) Count=2
+Mutex 31e6068cecc8 (#2) Count=357
+Mutex c000900d48 (0) Count=3
+Mutex 31e6395ced28 (0) Count=15
+Mutex 5840014654a8 (0) Count=501
+Mutex c000560948 (0) Count=4
+Mutex c000600948 (0) Count=1
+Mutex 761f7f3fb914 (0) Count=8
+Mutex 31e615347c38 (#27) Count=185
+Mutex 31e63f8e6888 (0) Count=2
+Mutex 7ffcff68c880 (0) Count=1
+Mutex 583ffecaa818 (0) Count=15
+Mutex 595f79b8ac38 (0) Count=6
+Mutex 6323c18197e8 (0) Count=25
+Mutex 761f7eadf914 (0) Count=10
+Mutex 583ffecabf78 (0) Count=21
+Mutex 31e6068ce5a8 (#164) Count=232
+Mutex 31e6249ca218 (0) Count=250
+Mutex c000b00548 (0) Count=5
+Mutex c000600d48 (0) Count=1
+Mutex 31e63faba550 (0) Count=719
+Mutex 31e62b18e478 (#163) Count=482
+Mutex 31e63fc3ced0 (0) Count=42
+Mutex 31e66390b9d8 (0) Count=28
+Mutex 6e36190 (0) Count=915
+Mutex 31e63978f228 (0) Count=77
+Mutex c000324148 (0) Count=4
+Mutex 31e6387fe880 (0) Count=1
+Mutex 31e63f91f240 (0) Count=21
+Mutex 855c808 (0) Count=6
+Mutex 31e66e3f1c38 (0) Count=125
+Mutex 595f740a0e88 (0) Count=21
+Mutex 58400036d008 (0) Count=49
+Mutex 75f27e06a3c8 (0) Count=1
+Mutex 31e6357f3518 (0) Count=270
+Mutex 31e6676e6218 (0) Count=128
+Mutex 595f79c13168 (0) Count=49
+Mutex 595f740a07a8 (0) Count=20
+Mutex 31e6068cfc38 (#115) Count=25
+Mutex 761f7d784944 (0) Count=717
+Mutex c000700d48 (0) Count=1
+Mutex 31e66e3f1058 (0) Count=185
+Mutex 57d2a348d758 (0) Count=1
+Mutex c0002b1148 (0) Count=1
+Mutex 6a64a08 (0) Count=1
+Mutex 31e601f9e6d8 (0) Count=82
+Mutex 588af61fa040 (0) Count=4
+Mutex 31e63faba598 (0) Count=542
+Mutex 31e6357f2218 (#48) Count=78
+Mutex 31e676aec808 (#40) Count=465
+Mutex 31e6068cf8a8 (#73) Count=90
+Mutex 31e6249ca478 (#72) Count=130
+Mutex 5d25f98 (0) Count=3
+Mutex 31e676aec478 (0) Count=391
+Mutex c000601548 (0) Count=2
+Mutex 583ffecabe18 (0) Count=13
+Mutex 6c9e5d8 (0) Count=1
+Mutex 74621e8 (0) Count=1
+Mutex 31e6761b98a8 (0) Count=131
+Mutex 31e6761b92b8 (0) Count=146
+Mutex 595f7409f1a8 (0) Count=17
+Mutex 583ffefe0090 (0) Count=3486
+Mutex 583ffeff04e8 (0) Count=218
+Mutex 31e60c05ca68 (#34) Count=156
+Mutex 7ffd0e5ee8f0 (0) Count=2
+Mutex c000101148 (0) Count=2
+Mutex 31e6676e6f28 (0) Count=218
+Mutex 31e6068cf648 (#152) Count=65
+Mutex 31e63f91f170 (0) Count=16
+Mutex 6c5ce88 (0) Count=3
+Mutex 583ffecab058 (0) Count=16
+Mutex 761f7e8d9914 (0) Count=5
+Mutex 595f740a0bc8 (0) Count=17
+Mutex 31e63f9c7e98 (0) Count=287
+Mutex 31e6761b8938 (0) Count=1
+Mutex 5e8f298 (0) Count=1
+Mutex 31e615347e98 (#23) Count=447
+Mutex 31e6394f8428 (0) Count=53
+Mutex 595f79b4dc18 (0) Count=47
+Mutex 31e676aec348 (0) Count=222
+Mutex 31e63fabae08 (0) Count=352
+Mutex 31e60c05c478 (#144) Count=315
+Mutex 31e63f8a7818 (0) Count=5
+Mutex 75f2845f23b8 (0) Count=1
+Mutex 595f79ae1a98 (0) Count=36
+Mutex 31e6676e6938 (#15) Count=262
+Mutex 31e66390aa68 (0) Count=190
+Mutex 31e6676e6b98 (0) Count=296
+Mutex 31e66e3f0938 (0) Count=81
+Mutex 583fff0ddaa0 (0) Count=4
+Mutex 31e60c05d648 (#6) Count=224
+Mutex 31e66e3f1e98 (0) Count=147
+Mutex 595f7409ff68 (0) Count=11
+Mutex c000580d48 (0) Count=2
+Mutex 31e63fc3cf60 (0) Count=40
+Mutex 595f740a1c48 (0) Count=13
+Mutex 31e6153479d8 (#71) Count=1
+Mutex 761f7daaf914 (0) Count=2
+Mutex 31e63f89e218 (0) Count=386
+Mutex 31e6357f25a8 (0) Count=409
+Mutex 761f7f4fe914 (0) Count=10
+Mutex 31e63fc3ca50 (0) Count=31
+Mutex 595f7524a028 (0) Count=39
+Mutex 6fc8858 (0) Count=5
+Mutex 31e6394f7b28 (0) Count=58
+Mutex 5840018653b8 (0) Count=49
+Mutex 31e61cdcfc38 (#33) Count=199
+Mutex 6323c18199c0 (0) Count=1
+Mutex c000101d48 (0) Count=1
+Mutex 595f740a0a68 (0) Count=10
+Mutex 31e60c05cdf8 (#140) Count=323
+Mutex 794a773c98f8 (0) Count=56
+Mutex 583ffecabcb8 (0) Count=13
+Mutex 583ffecaa558 (0) Count=20
+Mutex 31e66e3f12b8 (0) Count=19
+Mutex 583ffeca9fd8 (0) Count=12
+Mutex 595f740a0908 (0) Count=20
+Mutex 31e63fc3d038 (0) Count=38
+Mutex 31e6491e5778 (0) Count=221
+Mutex 31e6357f2808 (0) Count=201
+Mutex 595f7409f308 (0) Count=16
+Mutex 31e63fabb828 (0) Count=74
+Mutex 6e3f8e0 (0) Count=6
+Mutex 31e66e3f1b08 (0) Count=471
+Mutex 31e6491e4df8 (0) Count=179
+Mutex 583fff2668a8 (0) Count=50
+Mutex 31e6068ce6d8 (#8) Count=104
+Mutex 31e676aede98 (#150) Count=100
+Mutex 761f7f90a914 (0) Count=2
+Mutex 31e63fceb730 (0) Count=36943
+Mutex 31e6357f2348 (0) Count=9
+Mutex 31e63f89f778 (0) Count=573
+Mutex 31e62b18fd68 (#142) Count=123
+Mutex 31e63f91f4b0 (0) Count=23
+Mutex 7d621e61ac80 (0) Count=52
+Mutex 31e66e3f0808 (0) Count=121
+Mutex 31e63f97c3a0 (0) Count=16
+Mutex 31e6394f6928 (0) Count=58
+Mutex 31e638699b28 (0) Count=4
+Mutex c000601948 (0) Count=1
+Mutex 31e63bfa0110 (0) Count=48
+Mutex 31e60c05d778 (0) Count=121
+Mutex 31e60c05d058 (#151) Count=238
+Mutex 31e6394f7228 (0) Count=36
+Mutex 31e62b18e938 (0) Count=1
+Mutex 31e66e3f0cc8 (#122) Count=395
+Mutex 31e63fc3d110 (0) Count=43
+Mutex 31e6676e6a68 (#68) Count=384
+Mutex 31e6676e79d8 (0) Count=1
+Mutex 595f7409fe08 (0) Count=16
+Mutex 595f799e7088 (0) Count=39
+Mutex 31e6676e73e8 (0) Count=113
+Mutex 31e62b18eb98 (0) Count=2
+Mutex 31e6386a4d28 (0) Count=46
+Mutex 793cbf3788f8 (0) Count=2
+Mutex 31e6761b9518 (0) Count=185
+Mutex 66c8e70 (0) Count=1
+Mutex 31e6249cb648 (#19) Count=259
+Mutex 31e601f9f2b8 (0) Count=162
+Mutex 31e63fabb630 (0) Count=212
+Mutex 761f7dcb5914 (0) Count=5
+Mutex 31e63fc3cdb0 (0) Count=42
+Mutex 31e63f9c6478 (#86) Count=232
+Mutex c000b01548 (0) Count=5
+Mutex 31e60c05d9d8 (#77) Count=195
+Mutex 31e6761b8b98 (0) Count=1
+Mutex 31e63fc3cfa8 (0) Count=40
+Mutex 31e639790d28 (0) Count=84
+Mutex 31e615346938 (#69) Count=114
+Mutex 31e615346808 (#172) Count=105
+Mutex 31e66e3f0b98 (0) Count=156
+Mutex 31e6386c4d28 (0) Count=10
+Mutex 31e63fc3d278 (0) Count=29
+Mutex 7ffd9ab31fd0 (0) Count=3
+Mutex 7ffc98cb9400 (0) Count=1
+Mutex 761f7dfbe914 (0) Count=12
+Mutex 5840012a7208 (0) Count=49
+Mutex 31e6491e5648 (0) Count=123
+Mutex 31e63fc3cdf8 (0) Count=32
+Mutex 31e61cdcf058 (#93) Count=320
+Mutex 31e6068cfb08 (0) Count=356
+Mutex 595f744d5b90 (0) Count=3
+Mutex 583ffecab9f8 (0) Count=16
+Mutex 31e62b18fc38 (#171) Count=352
+Mutex 595f744b5c1c (0) Count=2
+Mutex 31e60c05d188 (#134) Count=505
+Mutex 31e63fc3cd68 (0) Count=33
+Mutex 583ffecaa6b8 (0) Count=18
+Mutex 31e6068ce808 (#112) Count=183
+Mutex 761f7e2c7914 (0) Count=8
+Mutex 761f7dbb2914 (0) Count=4
+Mutex 584000694ac8 (0) Count=51
+Mutex 6de0c98 (0) Count=1
+Mutex 595f740a16c8 (0) Count=18
+Mutex 31e6676e7518 (0) Count=1
+Mutex c000101948 (0) Count=3
+Mutex c000b00948 (0) Count=5
+Mutex 595f7a518f18 (0) Count=33
+Mutex 31e63f9c7c38 (0) Count=4
+Mutex 583ffecab5d8 (0) Count=12
+Mutex 761f7f601914 (0) Count=11
+Mutex 31e6068ce478 (#158) Count=214
+Mutex 761f7e3ca914 (0) Count=12
+Mutex 31e6068ceb98 (#90) Count=523
+Mutex 584001992a08 (0) Count=37
+Mutex 31e63fc3cc48 (0) Count=35
+Mutex 7ffc98cb9e20 (0) Count=3
+Mutex 73da3e8 (0) Count=4
+Mutex 31e63fc3cb70 (0) Count=40
+Mutex 31e66390a938 (0) Count=86
+Mutex 31e6761b9058 (0) Count=62
+Mutex 31e63fc3d230 (0) Count=28
+Mutex 31e60c05d518 (#76) Count=127
+Mutex 31e63fc3cbb8 (0) Count=35
+Mutex 584004485f08 (0) Count=43
+Mutex 31e6249ca0e8 (0) Count=166
+Mutex 31e61cdcea68 (#132) Count=109
+Mutex 31e66e3f0df8 (#107) Count=13
+Mutex 31e639790428 (0) Count=65
+Mutex 761f7f0f1914 (0) Count=9
+Mutex 595f7409f5c8 (0) Count=18
+Mutex 7e69078 (0) Count=11
+Mutex 583fffe7d398 (0) Count=43
+Mutex 31e63f97c470 (0) Count=15
+Mutex 31e63f91f580 (0) Count=18
+Mutex 31e6068cedf8 (#155) Count=80
+Mutex 31e63f914c58 (0) Count=1
