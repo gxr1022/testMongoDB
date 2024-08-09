@@ -3,7 +3,7 @@
 
 sudo -v
 
-# 保持 sudo 凭证有效直到脚本结束
+
 while true; do sudo -v; sleep 60; done &
 
 mode=$1
@@ -21,12 +21,12 @@ ip_address="172.20.208.111"
 
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
-threads=(1)
-for ((i = 4; i <= 32; i += 4)); do
-    threads+=($i)
-done
+# threads=(1)
+# for ((i = 4; i <= 32; i += 4)); do
+#     threads+=($i)
+# done
 
-# threads=(32)
+threads=(1)
 
 hs=(
 run_clients
