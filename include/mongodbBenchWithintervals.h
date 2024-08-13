@@ -6,7 +6,6 @@
 #include <map>
 #include <fstream>
 #include <unistd.h>
-#include <barrier>
 #include <cassert>
 #include <gflags/gflags.h>
 #include <cstring>
@@ -18,7 +17,6 @@
 #include <sstream>
 #include <malloc.h>
 #include <mutex>
-#include <condition_variable>
 #include <thread>
 
 #include <bsoncxx/builder/basic/document.hpp>
@@ -38,8 +36,7 @@ using bsoncxx::builder::basic::make_document;
 DEFINE_uint64(str_key_size, 8, "size of key (bytes)");
 DEFINE_uint64(str_value_size, 100, "size of value (bytes)");
 DEFINE_uint64(num_threads, 1, "the number of threads");
-DEFINE_uint64(num_of_ops, 1, "the number of operations");
-// DEFINE_uint64(time_interval, 10, "the time interval of insert operations");
+DEFINE_uint64(time_interval, 10, "the time interval of insert operations");
 DEFINE_uint64(pid, -1, "the process id of mongoDB server");
 
 DEFINE_bool(first_mode, true, "fist mode start multiply clients on the same mongoDB server");
@@ -63,15 +60,13 @@ private:
 public:
     uint64_t key_size;
     uint64_t value_size;
-    uint64_t num_of_ops;
+    uint64_t num_of_ops=0;
     uint64_t num_threads;
-    // uint64_t time_interval;
+    uint64_t time_interval;
     uint64_t pid;
 
     std::vector<std::string> URIs;
-    std::mutex mtx;
-    std::condition_variable cv;
-    bool ebpf_completed = false;
+    std::mutex cout_mutex;
 
     std::string client_name;
     std::string collection_name;
@@ -92,16 +87,13 @@ public:
     ~mongodbBenchmark();
     std::string from_uint64_to_string(uint64_t value,uint64_t value_size);
     void split_string_from_input(std::vector<int> & splited_str, std::string input_str);
-    std::string getRemoteEBPFPid(const std::string& sshPassword, const std::string& ipAddress);
 
-
-    void clientThread(int thread_id, uint64_t core_id,std::atomic<uint64_t>& completed_ops);
+    void clientThread(int thread_id, uint64_t core_id);
     void load_and_run();
     void queryProfileCollection();
     void copyProfileToTempCollection(mongocxx::database& db);
     void setProfilingLevel(mongocxx::database& db, int level, double sampleRate);
     void startEBPFScript();
-    void endEBPFScript();
     void benchmark_report(const std::string benchmark_prefix, const std::string &name, const std::string &value)
     {
         standard_report(benchmark_prefix, name, value);
@@ -122,11 +114,10 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
     this->num_threads = FLAGS_num_threads;
     this->core_binding = FLAGS_core_binding;
     this->first_mode = FLAGS_first_mode;
-    this->num_of_ops = FLAGS_num_of_ops;
 
     this->key_size = FLAGS_str_key_size;
     this->value_size = FLAGS_str_value_size;
-    // this->time_interval = FLAGS_time_interval;
+    this->time_interval = FLAGS_time_interval;
     this->pid=FLAGS_pid;
 
     barrier_init(&this->barrier,this->num_threads);
@@ -149,94 +140,16 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
 
 }
 
-// void mongodbBenchmark::startEBPFScript() {
-//     std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"echo 'gxr123456' | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh" 
-//                           + std::to_string(time_interval) + " " 
-//                           + std::to_string(num_threads) + " " 
-//                           + std::to_string(pid)  + "\"";
-//     int result = system(command.c_str());
-//     if (result != 0) {
-//         std::cerr << "Error: Command execution failed with code " << result << std::endl;
-//     }
-// }
-
 void mongodbBenchmark::startEBPFScript() {
-    std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bash -c 'echo gxr123456 | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh " 
+    std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"echo 'gxr123456' | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis.sh " 
+                          + std::to_string(time_interval) + " " 
                           + std::to_string(num_threads) + " " 
-                          + std::to_string(pid) + "' > /dev/null 2>&1 &\"";
+                          + std::to_string(pid)  + "\"";
     int result = system(command.c_str());
     if (result != 0) {
         std::cerr << "Error: Command execution failed with code " << result << std::endl;
     }
 }
-
-
-std::string mongodbBenchmark::getRemoteEBPFPid(const std::string& sshPassword, const std::string& ipAddress) {
-    std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"pgrep -f \\\"lock_flow_analysis_ctrl_signal.py\\\" | head -n 1\"";
-    char buffer[128];
-    std::string result = "";
-    FILE* pipe = popen(command.c_str(), "r");
-    
-    if (!pipe) {
-        std::cerr << "popen failed!" << std::endl;
-        return "";
-    }
-    
-    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
-        result += buffer;
-    }
-    
-    int returnCode = pclose(pipe);
-    if (returnCode != 0) {
-        std::cerr << "Command execution failed with return code " << returnCode << std::endl;
-        return "";
-    }
-    
-    // Trim any trailing newline characters from the result
-    result.erase(result.find_last_not_of(" \n\r\t")+1);
-    
-    return result;
-}
-
-void mongodbBenchmark::endEBPFScript() {
-    uint64_t ebpf_pid;
-    std::string sshPassword = "gxr123456";
-    std::string ipAddress = "172.20.208.111";
-    ebpf_pid=std::stoull(getRemoteEBPFPid(sshPassword,ipAddress));
-    std::cout<<ebpf_pid<<std::endl;
-    // std::string command = "ssh gxr@172.20.208.111 \"sudo kill -10 " + std::to_string(ebpf_pid) + "\"";
-    
-    std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"echo '" + sshPassword + "' | sudo -S kill -10 " + std::to_string(ebpf_pid) + "\"";
-   
-    
-    int result = system(command.c_str());
-    if (result != 0) {
-        std::cout << "Error: Failed to send signal to Server B. Command exited with code " << result << std::endl;
-    } else {
-        std::cout << "Signal sent successfully to Server B." << std::endl;
-    }
-
-    // waiting eBPF run done.
-    std::string waitCommand = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"while kill -0 " + std::to_string(ebpf_pid) + " > /dev/null 2>&1; do sleep 1; done\"";
-    result = system(waitCommand.c_str());
-    if (result != 0) {
-        std::cout << "Error: Failed to wait for eBPF process to finish. Command exited with code " << result << std::endl;
-        return;
-    } else {
-        std::cout << "eBPF process has completed." << std::endl;
-    }
-
-
-    {
-        std::lock_guard<std::mutex> lock(mtx);
-        ebpf_completed = true;
-    }
-    cv.notify_all(); 
-
-}
-
-
-
 
 mongodbBenchmark::~mongodbBenchmark()
 {
@@ -267,59 +180,63 @@ void mongodbBenchmark::split_string_from_input(std::vector<int>& splited_str, st
     }
 }
 
+// void mongodbBenchmark::queryProfileCollection()
+// {
+//     mongocxx::client client(mongocxx::uri(FLAGS_URI));
+//     auto db = client["your_database_name"];
+
+//     mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
+   
+//     for (auto&& doc : cursor) {
+//         std::cout << bsoncxx::to_json(doc) << std::endl;
+//     }
+// }
 void mongodbBenchmark::load_and_run()
 {
     static mongocxx::instance instance{}; // This should be done only once.
+    
 
     // Create and start client threads
     std::vector<std::thread> threads;
     std::vector<int> core_ids;
     split_string_from_input(core_ids, core_binding);
 
-    std::atomic<uint64_t> completed_ops{0}; // Counter for completed operations
-    startEBPFScript();
-
 
     for (int i = 0; i < num_threads; i++)
     {
         uint64_t core_id = core_ids[i];
-        threads.emplace_back([this, i, core_id, &completed_ops]()
-                             { 
-                                 this->clientThread(i, core_id, completed_ops); 
-                             });
+        // std::cout<<core_id<<std::endl;
+        threads.emplace_back([this, i, core_id]()
+                             { this->clientThread(i, core_id); });
     }
     
-    // Wait for all client threads to finish based on the number of operations
-    auto start_time = std::chrono::high_resolution_clock::now();
-    while (completed_ops.load() < num_of_ops)
-    {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Sleep to reduce busy-waiting
-    }
+    std::this_thread::sleep_for(std::chrono::seconds(10));
+    startEBPFScript();
 
+    std::this_thread::sleep_for(std::chrono::seconds(time_interval));
     stop_flag.store(true);
-    
-    endEBPFScript();
-    std::this_thread::sleep_for(std::chrono::seconds(180));
+
+    // Wait for all client threads to finish
+    auto start_time = std::chrono::high_resolution_clock::now();
     for (auto &thread : threads)
     {
         thread.join();
     }
 
-    // Calculate and report the results
-    auto end_time = std::chrono::high_resolution_clock::now();
-    double duration_s = std::chrono::duration_cast<std::chrono::seconds>(end_time - start_time).count();
-    double duration_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();
-
+    // sync_barrier();
+    double duration_s = double(time_interval);
+    double duration_ns = duration_s * (1000.0 * 1000 * 1000);
+    // std::cout<<num_of_ops<<std::endl;
     double throughput = num_of_ops / duration_s;
-    double average_latency_ns = duration_ns / num_of_ops;
+    double average_latency_ns = (double)duration_ns / num_of_ops;
 
     benchmark_report(load_benchmark_prefix, "number_of_operations", std::to_string(num_of_ops));
     benchmark_report(load_benchmark_prefix, "overall_duration_ns", std::to_string(duration_ns));
     benchmark_report(load_benchmark_prefix, "overall_duration_s", std::to_string(duration_s));
     benchmark_report(load_benchmark_prefix, "overall_throughput", std::to_string(throughput));
     benchmark_report(load_benchmark_prefix, "overall_average_latency_ns", std::to_string(average_latency_ns));
-}
 
+}
 
 void  mongodbBenchmark::copyProfileToTempCollection(mongocxx::database& db) {
     mongocxx::pipeline p{};
@@ -336,7 +253,7 @@ void mongodbBenchmark::setProfilingLevel(mongocxx::database& db, int level, doub
     db.run_command(command);
 }
 
-void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, std::atomic<uint64_t>& completed_ops)
+void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
 {
     set_affinity(core_id);
     mongocxx::uri uri;
@@ -365,13 +282,14 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, std::atomic
     wc.journal(false); 
     collection.write_concern(wc);
 
+
+
     uint64_t rand=0;
     std::string key;
-    while (!stop_flag.load()&& completed_ops.load() < num_of_ops) {
+    while (!stop_flag.load()) {
         key=from_uint64_to_string(rand,key_size);
         auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
         rand++;
-        completed_ops.fetch_add(1, std::memory_order_relaxed);
     }
 
     // copyProfileToTempCollection(db);
@@ -391,10 +309,6 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, std::atomic
     }
     outFile.close();
 
-    // num_of_ops+=rand;
+    num_of_ops+=rand;
     collection.drop();
-    // sync_barrier();
-    std::unique_lock<std::mutex> lock(mtx);
-    cv.wait(lock, [this]{ return ebpf_completed; });
-
 }

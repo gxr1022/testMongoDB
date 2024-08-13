@@ -15,6 +15,7 @@ RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
 current=`date "+%Y-%m-%d-%H-%M-%S"`
+# time_interval=600
 
 ip_address="172.20.208.111"
 
@@ -27,8 +28,8 @@ sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
 threads=(1)
 
-
-num_of_ops_set=(10000)
+# time_intervals=(20 30 40 50 60 70 80 90 100 200 300 400 500)
+time_intervals=(20)
 
 hs=(
 run_clients
@@ -41,12 +42,10 @@ kv_sizes=(
 	# "16 4096"
 )
 
-EBPF_LOG_PATH=${RUN_PATH}/ebpf_log/${current}
 LOG_PATH=${RUN_PATH}/log_remote/${current}
 BINARY_PATH=${RUN_PATH}/build/
 
 mkdir -p ${LOG_PATH}
-mkdir -p ${EBPF_LOG_PATH}
 
 echo "init ok "
 
@@ -65,7 +64,7 @@ if [[ "${PIPESTATUS[0]}" != 0  ]];then
 fi
 
 thread_binding_seq="0"
-thread_bind=(1 2 3 4 5 6 7 8 9 10 11 24 25 26 27 28 29 30 31 32 33 34 35 12 13 14 15 16 17 18 19 20 21 22 23 36 37 38 39 40 41 42 43 44 45 46 47)
+thread_bind=(0 1 2 3 4 5 6 7 8 9 10 11 24 25 26 27 28 29 30 31 32 33 34 35 12 13 14 15 16 17 18 19 20 21 22 23 36 37 38 39 40 41 42 43 44 45 46 47)
 for td in ${thread_bind[*]};do
     thread_binding_seq+=",$td"
 done
@@ -77,23 +76,12 @@ done
 # echo "$uri_set"
 
 for t in ${threads[*]}; do
-	for num_of_ops in ${num_of_ops_set[*]}; do
+	for time_interval in ${time_intervals[*]}; do
         mongod_start_output=$(sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo $SUDO_PASSWORD | sudo -S /home/gxr/mongodb-run/testMongoDB/scripts/start_mongod.sh true 1")
  	    mongod_pid=$(echo "$mongod_start_output" | grep -oP 'forked process: \K\d+')
         tid_output=$(ps -T -p $mongod_pid) 
         comm_array=($(echo "$tid_output" | awk 'NR>1 {print $5}'))
         
-        # start eBPF profiling ……
-        # ebpf_log_fname="/home/gxr/mongodb-run/ebpf_monitor/stdout_log/ebpf.${t}.thread.${mode}.${mongod_pid}.log"
-        # sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo '${SUDO_PASSWORD}' | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh ${t} ${mongod_pid}  > ${ebpf_log_fname} 2>&1 &"
-        # if [ $? -eq 0 ]; then
-        #     echo "Command executed successfully on Server B."
-        # else
-        #     echo "Error: Command execution failed on Server B."
-        # fi
-        # sleep 5
-
-        # other loops
         for kv_size in "${kv_sizes[@]}"; do
             kv_size_array=( ${kv_size[*]} )
             key_size=${kv_size_array[0]}
@@ -109,33 +97,20 @@ for t in ${threads[*]}; do
                 --core_binding=${thread_binding_seq} \
                 --str_key_size=${key_size} \
                 --str_value_size=${value_size} \
-                --num_of_ops=${num_of_ops} \
                 --URI_set=${uri_set} \
                 --URI=mongodb://172.20.208.111:27017 \
+                --time_interval=${time_interval} \
                 --pid=${mongod_pid} \
                 --first_mode=${mode}"
 
-                this_log_path=${LOG_PATH}/${h_name}.${t}.thread.${mode}.${key_size}.${value_size}.log
+                this_log_path=${LOG_PATH}/${h_name}.${t}.thread.${mode}.${key_size}.${value_size}.${time_interval}s.log
                 echo ${cmd} 2>&1 | tee ${this_log_path}
 
                 timeout -v 3600 stdbuf -o0 ${cmd} 2>&1 | tee -a ${this_log_path}
                 echo "Log file in: ${this_log_path}"
             done
         done
-
-        # close ebpf program running on remote server
-        # pid_ebpf=$(sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo $SUDO_PASSWORD | sudo -S pgrep -f lock_flow_analysis_ctrl_signal.py | head -n 1")
-        # echo ${pid_ebpf}
-        # if [ -z "$pid_ebpf" ]; then
-        #     echo "Process not found."
-        # else
-        #     echo "Process PID of eBPF: $pid_ebpf"
-        # fi
-
-        # We must ensure that print_stack is invoked before conn1 close.
-        # sshpass -p $SSH_PASSWORD ssh gxr@$ip_address  "echo '${SUDO_PASSWORD}' | sudo -S kill -10 ${pid_ebpf}"
-        # sleep 5 # reserve enough time to output ebpf results to file.
-
+        sleep 5
         # shutdown mongodb
         sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo $SUDO_PASSWORD | sudo -S /home/gxr/mongodb-run/testMongoDB/scripts/shutdown_mongod.sh true"
         sleep 5
