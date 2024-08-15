@@ -27,9 +27,8 @@ sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
 threads=(1)
 
-
-num_of_ops_set=(10000)
-
+num_of_ops_set=(100000 200000 400000 600000 800000 1000000)
+# num_of_ops_set=(10000)
 hs=(
 run_clients
 )

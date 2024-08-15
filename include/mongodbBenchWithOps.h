@@ -141,7 +141,6 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
             // std::cout<<item<<" ";
         }
     }
-
     for (int i = 0; i < value_size; i++)
     {
         common_value += (char)('a' + (i % 26));
@@ -161,9 +160,11 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
 // }
 
 void mongodbBenchmark::startEBPFScript() {
-    std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bash -c 'echo gxr123456 | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh " 
-                          + std::to_string(num_threads) + " " 
-                          + std::to_string(pid) + "' > /dev/null 2>&1 &\"";
+std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bash -c 'echo gxr123456 | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh " 
+                      + std::to_string(num_threads) + " " 
+                      + std::to_string(pid) + " " 
+                      + std::to_string(num_of_ops) + "' > /dev/null 2>&1 &\"";
+
     int result = system(command.c_str());
     if (result != 0) {
         std::cerr << "Error: Command execution failed with code " << result << std::endl;
@@ -203,12 +204,10 @@ void mongodbBenchmark::endEBPFScript() {
     std::string sshPassword = "gxr123456";
     std::string ipAddress = "172.20.208.111";
     ebpf_pid=std::stoull(getRemoteEBPFPid(sshPassword,ipAddress));
-    std::cout<<ebpf_pid<<std::endl;
+    // std::cout<<ebpf_pid<<std::endl;
     // std::string command = "ssh gxr@172.20.208.111 \"sudo kill -10 " + std::to_string(ebpf_pid) + "\"";
     
-    std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"echo '" + sshPassword + "' | sudo -S kill -10 " + std::to_string(ebpf_pid) + "\"";
-   
-    
+    std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"echo '" + sshPassword + "' | sudo -S kill -2 " + std::to_string(ebpf_pid) + "\"";
     int result = system(command.c_str());
     if (result != 0) {
         std::cout << "Error: Failed to send signal to Server B. Command exited with code " << result << std::endl;
@@ -225,7 +224,6 @@ void mongodbBenchmark::endEBPFScript() {
     } else {
         std::cout << "eBPF process has completed." << std::endl;
     }
-
 
     {
         std::lock_guard<std::mutex> lock(mtx);
@@ -277,8 +275,8 @@ void mongodbBenchmark::load_and_run()
     split_string_from_input(core_ids, core_binding);
 
     std::atomic<uint64_t> completed_ops{0}; // Counter for completed operations
+    
     startEBPFScript();
-
 
     for (int i = 0; i < num_threads; i++)
     {
@@ -289,17 +287,18 @@ void mongodbBenchmark::load_and_run()
                              });
     }
     
+    
     // Wait for all client threads to finish based on the number of operations
     auto start_time = std::chrono::high_resolution_clock::now();
     while (completed_ops.load() < num_of_ops)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Sleep to reduce busy-waiting
     }
-
-    stop_flag.store(true);
     
     endEBPFScript();
-    std::this_thread::sleep_for(std::chrono::seconds(180));
+    std::this_thread::sleep_for(std::chrono::seconds(120));
+    stop_flag.store(true);
+    
     for (auto &thread : threads)
     {
         thread.join();
@@ -367,34 +366,37 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, std::atomic
 
     uint64_t rand=0;
     std::string key;
-    while (!stop_flag.load()&& completed_ops.load() < num_of_ops) {
+    // while (!stop_flag.load()&& completed_ops.load() < num_of_ops) {
+    while (completed_ops.load() < num_of_ops) {
         key=from_uint64_to_string(rand,key_size);
         auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
         rand++;
         completed_ops.fetch_add(1, std::memory_order_relaxed);
     }
-
+    while (!stop_flag.load()) {
+        key=from_uint64_to_string(rand,key_size);
+        auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
+        rand++;
+    }
     // copyProfileToTempCollection(db);
-    std::string fileName="/home/wjxt/gxr/testMongoDB/log/"+std::to_string(thread_id)+"output.json";
-    std::ofstream outFile(fileName);
+    // std::string fileName="/home/wjxt/gxr/testMongoDB/log/"+std::to_string(thread_id)+"output.json";
+    // std::ofstream outFile(fileName);
 
-    mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
+    // mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
 
-    
-    
-    if (!outFile.is_open()) {
-        std::cerr << "Failed to open file: " << fileName << std::endl;
-        return;
-    }
-    for (auto&& doc : cursor) {
-        outFile << bsoncxx::to_json(doc) << std::endl;
-    }
-    outFile.close();
+    // if (!outFile.is_open()) {
+    //     std::cerr << "Failed to open file: " << fileName << std::endl;
+    //     return;
+    // }
+    // for (auto&& doc : cursor) {
+    //     outFile << bsoncxx::to_json(doc) << std::endl;
+    // }
+    // outFile.close();
 
     // num_of_ops+=rand;
-    collection.drop();
-    // sync_barrier();
+    // std::this_thread::sleep_for(std::chrono::seconds(120));
     std::unique_lock<std::mutex> lock(mtx);
     cv.wait(lock, [this]{ return ebpf_completed; });
+    collection.drop();
 
 }

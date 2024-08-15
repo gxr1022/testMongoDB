@@ -194,14 +194,13 @@ void mongodbBenchmark::split_string_from_input(std::vector<int>& splited_str, st
 void mongodbBenchmark::load_and_run()
 {
     static mongocxx::instance instance{}; // This should be done only once.
-    
 
     // Create and start client threads
     std::vector<std::thread> threads;
     std::vector<int> core_ids;
     split_string_from_input(core_ids, core_binding);
 
-
+    
     for (int i = 0; i < num_threads; i++)
     {
         uint64_t core_id = core_ids[i];
@@ -210,9 +209,8 @@ void mongodbBenchmark::load_and_run()
                              { this->clientThread(i, core_id); });
     }
     
-    std::this_thread::sleep_for(std::chrono::seconds(10));
+    // std::this_thread::sleep_for(std::chrono::seconds(10));
     startEBPFScript();
-
     std::this_thread::sleep_for(std::chrono::seconds(time_interval));
     stop_flag.store(true);
 
@@ -293,21 +291,19 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id)
     }
 
     // copyProfileToTempCollection(db);
-    std::string fileName="/home/wjxt/gxr/testMongoDB/log/"+std::to_string(thread_id)+"output.json";
-    std::ofstream outFile(fileName);
+    // std::string fileName="/home/wjxt/gxr/testMongoDB/log/"+std::to_string(thread_id)+"output.json";
+    // std::ofstream outFile(fileName);
 
-    mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
+    // mongocxx::cursor cursor = db["system.profile"].find(bsoncxx::builder::stream::document{} << "op" << "insert" << bsoncxx::builder::stream::finalize);
 
-    
-    
-    if (!outFile.is_open()) {
-        std::cerr << "Failed to open file: " << fileName << std::endl;
-        return;
-    }
-    for (auto&& doc : cursor) {
-        outFile << bsoncxx::to_json(doc) << std::endl;
-    }
-    outFile.close();
+    // if (!outFile.is_open()) {
+    //     std::cerr << "Failed to open file: " << fileName << std::endl;
+    //     return;
+    // }
+    // for (auto&& doc : cursor) {
+    //     outFile << bsoncxx::to_json(doc) << std::endl;
+    // }
+    // outFile.close();
 
     num_of_ops+=rand;
     collection.drop();
