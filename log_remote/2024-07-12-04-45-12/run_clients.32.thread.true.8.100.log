@@ -1,0 +1,1561 @@
+numactl --membind=0 /home/wjxt/gxr/testMongoDB/build//run_clients --num_threads=32 --core_binding=0,0,1,2,3,4,5,6,7,8,9,10,11,24,25,26,27,28,29,30,31,32,33,34,35,12,13,14,15,16,17,18,19,20,21,22,23,36,37,38,39,40,41,42,43,44,45,46,47 --str_key_size=8 --str_value_size=100 --URI_set=mongodb://172.20.208.111:27017,mongodb://172.20.208.111:27018,mongodb://172.20.208.111:27019,mongodb://172.20.208.111:27020,mongodb://172.20.208.111:27021,mongodb://172.20.208.111:27022,mongodb://172.20.208.111:27023,mongodb://172.20.208.111:27024,mongodb://172.20.208.111:27025,mongodb://172.20.208.111:27026,mongodb://172.20.208.111:27027,mongodb://172.20.208.111:27028,mongodb://172.20.208.111:27029,mongodb://172.20.208.111:27030,mongodb://172.20.208.111:27031,mongodb://172.20.208.111:27032,mongodb://172.20.208.111:27033,mongodb://172.20.208.111:27034,mongodb://172.20.208.111:27035,mongodb://172.20.208.111:27036,mongodb://172.20.208.111:27037,mongodb://172.20.208.111:27038,mongodb://172.20.208.111:27039,mongodb://172.20.208.111:27040,mongodb://172.20.208.111:27041,mongodb://172.20.208.111:27042,mongodb://172.20.208.111:27043,mongodb://172.20.208.111:27044,mongodb://172.20.208.111:27045,mongodb://172.20.208.111:27046,mongodb://172.20.208.111:27047,mongodb://172.20.208.111:27048,mongodb://172.20.208.111:27049,mongodb://172.20.208.111:27050,mongodb://172.20.208.111:27051,mongodb://172.20.208.111:27052,mongodb://172.20.208.111:27053,mongodb://172.20.208.111:27054,mongodb://172.20.208.111:27055,mongodb://172.20.208.111:27056,mongodb://172.20.208.111:27057,mongodb://172.20.208.111:27058,mongodb://172.20.208.111:27059,mongodb://172.20.208.111:27060,mongodb://172.20.208.111:27061,mongodb://172.20.208.111:27062,mongodb://172.20.208.111:27063,mongodb://172.20.208.111:27064 --URI=mongodb://172.20.208.111:27017 --time_interval=600 --pid=267505 --first_mode=true
+[sudo] gxr 的密码： conn1 conn2 conn3 conn4 conn5 conn6 conn7 conn8 conn9 conn10 conn11 conn12 conn13 conn14 conn15 conn16 conn17 conn18 conn19 conn20 conn21 conn22 conn23 conn24 conn25 conn26 conn27 conn28 conn29 conn30 conn31 conn32
+['conn1', 'conn2', 'conn3', 'conn4', 'conn5', 'conn6', 'conn7', 'conn8', 'conn9', 'conn10', 'conn11', 'conn12', 'conn13', 'conn14', 'conn15', 'conn16', 'conn17', 'conn18', 'conn19', 'conn20', 'conn21', 'conn22', 'conn23', 'conn24', 'conn25', 'conn26', 'conn27', 'conn28', 'conn29', 'conn30', 'conn31', 'conn32']
+conn2 253265 
+
+conn24 253265 
+
+conn1 253251 
+
+conn10 253251 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253261 
+
+conn20 253261 
+
+conn2 253264 
+
+conn23 253264 
+
+conn4 253245 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253242 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253253 
+
+conn12 253253 
+
+conn7 253248 
+
+conn2 253261 
+
+conn20 253261 
+
+conn2 253269 
+
+conn28 253269 
+
+conn4 253245 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253270 
+
+conn29 253270 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253270 
+
+conn29 253270 
+
+conn7 253248 
+
+conn7 253248 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253242 
+
+conn7 253248 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253255 
+
+conn14 253255 
+
+conn9 253250 
+
+conn2 253264 
+
+conn23 253264 
+
+conn2 253264 
+
+conn23 253264 
+
+conn1 253259 
+
+conn18 253259 
+
+conn8 253249 
+
+conn2 253265 
+
+conn24 253265 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253244 
+
+conn3 253273 
+
+conn32 253273 
+
+conn7 253248 
+
+conn1 253260 
+
+conn19 253260 
+
+conn3 253244 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253263 
+
+conn22 253263 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253267 
+
+conn26 253267 
+
+conn8 253249 
+
+conn1 253256 
+
+conn15 253256 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn2 253261 
+
+conn20 253261 
+
+conn4 253245 
+
+conn3 253273 
+
+conn32 253273 
+
+conn3 253244 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253254 
+
+conn13 253254 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253264 
+
+conn23 253264 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253242 
+
+conn2 253265 
+
+conn24 253265 
+
+conn1 253242 
+
+conn1 253253 
+
+conn12 253253 
+
+conn1 253251 
+
+conn10 253251 
+
+conn2 253261 
+
+conn20 253261 
+
+conn4 253245 
+
+conn3 253273 
+
+conn32 253273 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253254 
+
+conn13 253254 
+
+conn9 253250 
+
+conn3 253244 
+
+conn7 253248 
+
+conn9 253250 
+
+conn8 253249 
+
+conn1 253260 
+
+conn19 253260 
+
+conn3 253271 
+
+conn30 253271 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253255 
+
+conn14 253255 
+
+conn3 253271 
+
+conn30 253271 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253273 
+
+conn32 253273 
+
+conn1 253251 
+
+conn10 253251 
+
+conn3 253273 
+
+conn32 253273 
+
+conn2 253265 
+
+conn24 253265 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253242 
+
+conn1 253253 
+
+conn12 253253 
+
+conn1 253251 
+
+conn10 253251 
+
+conn4 253245 
+
+conn2 253261 
+
+conn20 253261 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253256 
+
+conn15 253256 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn3 253273 
+
+conn32 253273 
+
+conn2 253264 
+
+conn23 253264 
+
+conn2 253268 
+
+conn27 253268 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn1 253251 
+
+conn10 253251 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253242 
+
+conn1 253253 
+
+conn12 253253 
+
+conn7 253248 
+
+conn2 253269 
+
+conn28 253269 
+
+conn7 253248 
+
+conn4 253245 
+
+conn2 253261 
+
+conn20 253261 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253254 
+
+conn13 253254 
+
+conn1 253260 
+
+conn19 253260 
+
+conn2 253261 
+
+conn20 253261 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253259 
+
+conn18 253259 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253267 
+
+conn26 253267 
+
+conn8 253249 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn2 253268 
+
+conn27 253268 
+
+conn2 253268 
+
+conn27 253268 
+
+conn9 253250 
+
+conn1 253260 
+
+conn19 253260 
+
+conn3 253244 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253253 
+
+conn12 253253 
+
+conn2 253261 
+
+conn20 253261 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253254 
+
+conn13 253254 
+
+conn1 253256 
+
+conn15 253256 
+
+conn8 253249 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253259 
+
+conn18 253259 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253273 
+
+conn32 253273 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253260 
+
+conn19 253260 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253253 
+
+conn12 253253 
+
+conn2 253265 
+
+conn24 253265 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253254 
+
+conn13 253254 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253242 
+
+conn3 253273 
+
+conn32 253273 
+
+conn2 253267 
+
+conn26 253267 
+
+conn8 253249 
+
+conn4 253245 
+
+conn3 253271 
+
+conn30 253271 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253268 
+
+conn27 253268 
+
+conn9 253250 
+
+conn3 253273 
+
+conn32 253273 
+
+conn1 253260 
+
+conn19 253260 
+
+conn3 253244 
+
+conn7 253248 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253242 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253253 
+
+conn12 253253 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253254 
+
+conn13 253254 
+
+conn3 253271 
+
+conn30 253271 
+
+conn8 253249 
+
+conn3 253271 
+
+conn30 253271 
+
+conn7 253248 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253244 
+
+conn8 253249 
+
+conn3 253271 
+
+conn30 253271 
+
+conn2 253264 
+
+conn23 253264 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253242 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253253 
+
+conn12 253253 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253260 
+
+conn19 253260 
+
+conn4 253245 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253270 
+
+conn29 253270 
+
+conn3 254232 
+
+conn1 253256 
+
+conn15 253256 
+
+conn3 253273 
+
+conn32 253273 
+
+conn7 253248 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253256 
+
+conn15 253256 
+
+conn2 253263 
+
+conn22 253263 
+
+conn4 253245 
+
+conn7 253248 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253268 
+
+conn27 253268 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253261 
+
+conn20 253261 
+
+conn3 253244 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253264 
+
+conn23 253264 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253242 
+
+conn2 253267 
+
+conn26 253267 
+
+conn3 254238 
+
+conn1 253253 
+
+conn12 253253 
+
+conn1 253242 
+
+conn3 253271 
+
+conn30 253271 
+
+conn7 253248 
+
+conn3 253244 
+
+conn2 253261 
+
+conn20 253261 
+
+conn4 253245 
+
+conn3 254238 
+
+conn9 253250 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253256 
+
+conn15 253256 
+
+conn8 253249 
+
+conn7 253248 
+
+conn2 253268 
+
+conn27 253268 
+
+conn2 253268 
+
+conn27 253268 
+
+conn1 253259 
+
+conn18 253259 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253272 
+
+conn31 253272 
+
+conn3 253271 
+
+conn30 253271 
+
+conn2 253269 
+
+conn28 253269 
+
+conn3 253273 
+
+conn32 253273 
+
+conn3 253244 
+
+conn2 253264 
+
+conn23 253264 
+
+conn3 254897 
+
+conn3 254897 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn9 253250 
+
+conn1 253251 
+
+conn10 253251 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253242 
+
+conn2 253267 
+
+conn26 253267 
+
+conn3 253271 
+
+conn30 253271 
+
+conn3 254238 
+
+conn1 253253 
+
+conn12 253253 
+
+conn3 254897 
+
+conn1 253251 
+
+conn10 253251 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253261 
+
+conn20 253261 
+
+conn4 253245 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253270 
+
+conn29 253270 
+
+conn3 254232 
+
+conn1 253256 
+
+conn15 253256 
+
+conn8 253249 
+
+conn9 253250 
+
+conn1 253255 
+
+conn14 253255 
+
+conn8 253249 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253271 
+
+conn30 253271 
+
+conn1 253251 
+
+conn10 253251 
+
+conn3 253273 
+
+conn32 253273 
+
+conn3 253244 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253242 
+
+conn2 253267 
+
+conn26 253267 
+
+conn4 253245 
+
+conn3 254238 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253253 
+
+conn12 253253 
+
+conn1 253260 
+
+conn19 253260 
+
+conn2 253261 
+
+conn20 253261 
+
+conn4 253245 
+
+conn1 253254 
+
+conn13 253254 
+
+conn2 253270 
+
+conn29 253270 
+
+conn3 254232 
+
+conn2 253264 
+
+conn23 253264 
+
+conn9 253250 
+
+conn9 253250 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253265 
+
+conn24 253265 
+
+conn9 253250 
+
+conn8 253249 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253271 
+
+conn30 253271 
+
+conn3 253273 
+
+conn32 253273 
+
+conn1 253260 
+
+conn19 253260 
+
+conn3 253244 
+
+conn2 253264 
+
+conn23 253264 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253242 
+
+conn2 253267 
+
+conn26 253267 
+
+conn3 254238 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 254897 
+
+conn3 254897 
+
+conn9 253250 
+
+conn2 253261 
+
+conn20 253261 
+
+conn8 253249 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253251 
+
+conn10 253251 
+
+conn4 253245 
+
+conn1 253254 
+
+conn13 253254 
+
+conn1 253256 
+
+conn15 253256 
+
+conn3 254232 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253263 
+
+conn22 253263 
+
+conn2 253263 
+
+conn22 253263 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253272 
+
+conn31 253272 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253271 
+
+conn30 253271 
+
+conn7 253248 
+
+conn3 253273 
+
+conn32 253273 
+
+conn3 253244 
+
+conn2 253261 
+
+conn20 253261 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253260 
+
+conn19 253260 
+
+conn2 253264 
+
+conn23 253264 
+
+conn9 253250 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253263 
+
+conn22 253263 
+
+conn1 253242 
+
+conn2 253267 
+
+conn26 253267 
+
+conn2 253265 
+
+conn24 253265 
+
+conn2 253267 
+
+conn26 253267 
+
+conn3 254238 
+
+conn1 253253 
+
+conn12 253253 
+
+conn2 253261 
+
+conn20 253261 
+
+conn1 253255 
+
+conn14 253255 
+
+conn4 253245 
+
+conn1 253254 
+
+conn13 253254 
+
+conn1 253251 
+
+conn10 253251 
+
+conn2 253270 
+
+conn29 253270 
+
+conn3 254232 
+
+conn1 253256 
+
+conn15 253256 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 253271 
+
+conn30 253271 
+
+conn1 253260 
+
+conn19 253260 
+
+conn3 254897 
+
+conn7 253248 
+
+conn2 253268 
+
+conn27 253268 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253255 
+
+conn14 253255 
+
+conn1 253260 
+
+conn19 253260 
+
+conn8 253249 
+
+conn3 253272 
+
+conn31 253272 
+
+conn1 253259 
+
+conn18 253259 
+
+conn2 253268 
+
+conn27 253268 
+
+conn3 253271 
+
+conn30 253271 
+
+conn3 253273 
+
+conn32 253273 
+
+conn3 253244 
+
+conn3 255852 
+
+conn3 255852 
+
+conn2 253269 
+
+conn28 253269 
+
+conn1 253253 
+
+conn12 253253 
+
+conn2 253264 
+
+conn23 253264 
+
+conn3 254897 
+
+conn2 253263 
+
+conn22 253263 
+
+conn1 253242 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 253265 
+
+conn24 253265 
+
+conn3 254238 
+
+conn2 253267 
+
+conn26 253267 
+
+conn1 253259 
+
+conn18 253259 
+
+conn3 254897 
+
+conn1 253253 
+
+conn12 253253 
+
+conn3 253244 
+
+conn9 253250 
+
+conn9 253250 
+
+conn1 253255 
+
+conn14 253255 
+
+conn2 253261 
+
+conn20 253261 
+
+conn1 253254 
+
+conn13 253254 
+
+conn4 253245 
+
+conn3 255853 
+
+conn3 255853 
+
+conn8 253249 
+
+conn2 253270 
+
+conn29 253270 
+
+conn1 253251 
+
+conn10 253251 
+
+conn1 253256 
+
+conn15 253256 
+
+conn3 253271 
+
+conn30 253271 
+
+conn3 254232 
+
+conn2 253269 
+
+conn28 253269 
+
+conn2 267576 
+
+conn25 267576 
+
+conn1 267565 
+
+conn14 267565 
+
+conn1 267564 
+
+conn13 267564 
+
+conn1 267563 
+
+conn12 267563 
+
+conn3 267554 
+
+conn3 267554 
+
+conn2 267579 
+
+conn28 267579 
+
+conn5 267556 
+
+conn1 267565 
+
+conn14 267565 
+
+conn9 267560 
+
+conn1 267552 
+
+conn1 267564 
+
+conn13 267564 
+
+conn1 267570 
+
+conn19 267570 
+
+conn1 267561 
+
+conn10 267561 
+
+conn1 267563 
+
+conn12 267563 
+
+conn2 267572 
+
+conn21 267572 
+
+conn2 267574 
+
+conn23 267574 
+
+conn7 267558 
+
+conn1 267561 
+
+conn10 267561 
+
+conn2 267579 
+
+conn28 267579 
+
+conn6 267557 
+
+conn2 267553 
+
+conn4 267555 
+
+conn2 267579 
+
+conn28 267579 
+
+conn2 267573 
+
+conn22 267573 
+
+conn2 267572 
+
+conn21 267572 
+
+conn1 267570 
+
+conn19 267570 
+
+[report] load_overall_duration_ns : 600000000000.000000
+[report] load_overall_duration_s : 600.000000
+[report] load_overall_throughput : 71223.333333
+[report] load_overall_average_latency_ns : 14040.342584

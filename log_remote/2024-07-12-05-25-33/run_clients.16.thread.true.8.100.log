@@ -1,0 +1,1289 @@
+numactl --membind=0 /home/wjxt/gxr/testMongoDB/build//run_clients --num_threads=16 --core_binding=0,0,1,2,3,4,5,6,7,8,9,10,11,24,25,26,27,28,29,30,31,32,33,34,35,12,13,14,15,16,17,18,19,20,21,22,23,36,37,38,39,40,41,42,43,44,45,46,47 --str_key_size=8 --str_value_size=100 --URI_set=mongodb://172.20.208.111:27017,mongodb://172.20.208.111:27018,mongodb://172.20.208.111:27019,mongodb://172.20.208.111:27020,mongodb://172.20.208.111:27021,mongodb://172.20.208.111:27022,mongodb://172.20.208.111:27023,mongodb://172.20.208.111:27024,mongodb://172.20.208.111:27025,mongodb://172.20.208.111:27026,mongodb://172.20.208.111:27027,mongodb://172.20.208.111:27028,mongodb://172.20.208.111:27029,mongodb://172.20.208.111:27030,mongodb://172.20.208.111:27031,mongodb://172.20.208.111:27032,mongodb://172.20.208.111:27033,mongodb://172.20.208.111:27034,mongodb://172.20.208.111:27035,mongodb://172.20.208.111:27036,mongodb://172.20.208.111:27037,mongodb://172.20.208.111:27038,mongodb://172.20.208.111:27039,mongodb://172.20.208.111:27040,mongodb://172.20.208.111:27041,mongodb://172.20.208.111:27042,mongodb://172.20.208.111:27043,mongodb://172.20.208.111:27044,mongodb://172.20.208.111:27045,mongodb://172.20.208.111:27046,mongodb://172.20.208.111:27047,mongodb://172.20.208.111:27048,mongodb://172.20.208.111:27049,mongodb://172.20.208.111:27050,mongodb://172.20.208.111:27051,mongodb://172.20.208.111:27052,mongodb://172.20.208.111:27053,mongodb://172.20.208.111:27054,mongodb://172.20.208.111:27055,mongodb://172.20.208.111:27056,mongodb://172.20.208.111:27057,mongodb://172.20.208.111:27058,mongodb://172.20.208.111:27059,mongodb://172.20.208.111:27060,mongodb://172.20.208.111:27061,mongodb://172.20.208.111:27062,mongodb://172.20.208.111:27063,mongodb://172.20.208.111:27064 --URI=mongodb://172.20.208.111:27017 --time_interval=600 --pid=272524 --first_mode=true
+[sudo] gxr 的密码： conn1 conn2 conn3 conn4 conn5 conn6 conn7 conn8 conn9 conn10 conn11 conn12 conn13 conn14 conn15 conn16
+['conn1', 'conn2', 'conn3', 'conn4', 'conn5', 'conn6', 'conn7', 'conn8', 'conn9', 'conn10', 'conn11', 'conn12', 'conn13', 'conn14', 'conn15', 'conn16']
+conn9 271557 
+
+conn1 271549 
+
+conn8 271556 
+
+conn2 271550 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271559 
+
+conn11 271559 
+
+conn5 271553 
+
+conn6 271554 
+
+conn4 271552 
+
+conn3 271551 
+
+conn9 271557 
+
+conn1 271559 
+
+conn11 271559 
+
+conn7 271555 
+
+conn6 271554 
+
+conn2 271550 
+
+conn6 271554 
+
+conn7 271555 
+
+conn8 271556 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn1 271560 
+
+conn12 271560 
+
+conn5 271553 
+
+conn6 271554 
+
+conn8 271556 
+
+conn3 271551 
+
+conn9 271557 
+
+conn4 271552 
+
+conn7 271555 
+
+conn5 271553 
+
+conn1 271549 
+
+conn1 271559 
+
+conn11 271559 
+
+conn8 271556 
+
+conn2 271550 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn5 271553 
+
+conn1 271549 
+
+conn2 271550 
+
+conn1 271559 
+
+conn11 271559 
+
+conn9 271557 
+
+conn9 271557 
+
+conn3 271551 
+
+conn7 271555 
+
+conn5 271553 
+
+conn1 271549 
+
+conn1 271549 
+
+conn2 271550 
+
+conn8 271556 
+
+conn1 271558 
+
+conn10 271558 
+
+conn2 271550 
+
+conn1 271549 
+
+conn1 271559 
+
+conn11 271559 
+
+conn4 271552 
+
+conn1 271559 
+
+conn11 271559 
+
+conn6 271554 
+
+conn2 271550 
+
+conn9 271557 
+
+conn4 271552 
+
+conn3 271551 
+
+conn7 271555 
+
+conn9 271557 
+
+conn6 271554 
+
+conn8 271556 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271549 
+
+conn1 271559 
+
+conn11 271559 
+
+conn5 271553 
+
+conn6 271554 
+
+conn9 271557 
+
+conn1 271560 
+
+conn12 271560 
+
+conn3 271551 
+
+conn7 271555 
+
+conn8 271556 
+
+conn1 271560 
+
+conn12 271560 
+
+conn5 271553 
+
+conn6 271554 
+
+conn4 271552 
+
+conn2 271550 
+
+conn8 271556 
+
+conn5 271553 
+
+conn1 271558 
+
+conn10 271558 
+
+conn6 271554 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn2 271550 
+
+conn1 271560 
+
+conn12 271560 
+
+conn9 271557 
+
+conn9 271557 
+
+conn4 271552 
+
+conn3 271551 
+
+conn7 271555 
+
+conn1 271549 
+
+conn6 271554 
+
+conn1 271549 
+
+conn8 271556 
+
+conn1 271558 
+
+conn10 271558 
+
+conn2 271550 
+
+conn1 271559 
+
+conn11 271559 
+
+conn5 271553 
+
+conn1 271549 
+
+conn9 271557 
+
+conn2 271550 
+
+conn3 271551 
+
+conn7 271555 
+
+conn1 271560 
+
+conn12 271560 
+
+conn5 271553 
+
+conn7 271555 
+
+conn5 271553 
+
+conn1 271549 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271559 
+
+conn11 271559 
+
+conn8 271556 
+
+conn4 271552 
+
+conn4 271552 
+
+conn1 271549 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn1 271549 
+
+conn7 271555 
+
+conn9 271557 
+
+conn2 271550 
+
+conn8 271556 
+
+conn4 271552 
+
+conn8 271556 
+
+conn3 271551 
+
+conn7 271555 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271549 
+
+conn1 271560 
+
+conn12 271560 
+
+conn8 271556 
+
+conn1 271559 
+
+conn11 271559 
+
+conn4 271552 
+
+conn6 271554 
+
+conn9 271557 
+
+conn8 271556 
+
+conn3 271551 
+
+conn7 271555 
+
+conn1 271560 
+
+conn12 271560 
+
+conn4 271552 
+
+conn9 271557 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271549 
+
+conn1 271549 
+
+conn4 271552 
+
+conn8 271556 
+
+conn2 271550 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271549 
+
+conn1 271559 
+
+conn11 271559 
+
+conn9 271557 
+
+conn8 271556 
+
+conn1 271560 
+
+conn12 271560 
+
+conn2 271550 
+
+conn1 271558 
+
+conn10 271558 
+
+conn8 271556 
+
+conn2 271550 
+
+conn5 271553 
+
+conn1 271559 
+
+conn11 271559 
+
+conn1 271549 
+
+conn7 271555 
+
+conn3 271551 
+
+conn6 271554 
+
+conn9 271557 
+
+conn5 271553 
+
+conn1 271559 
+
+conn11 271559 
+
+conn2 271550 
+
+conn7 271555 
+
+conn3 271551 
+
+conn2 271550 
+
+conn2 271550 
+
+conn2 271550 
+
+conn5 271553 
+
+conn9 271557 
+
+conn6 271554 
+
+conn1 271549 
+
+conn5 271553 
+
+conn4 271552 
+
+conn8 271556 
+
+conn1 271558 
+
+conn10 271558 
+
+conn6 271554 
+
+conn1 271559 
+
+conn11 271559 
+
+conn8 271556 
+
+conn1 271559 
+
+conn11 271559 
+
+conn9 271557 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn3 271551 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271560 
+
+conn12 271560 
+
+conn8 271556 
+
+conn6 271554 
+
+conn9 271557 
+
+conn4 271552 
+
+conn6 271554 
+
+conn4 271552 
+
+conn7 271555 
+
+conn3 271551 
+
+conn9 271557 
+
+conn1 271558 
+
+conn10 271558 
+
+conn7 271555 
+
+conn3 271551 
+
+conn9 271557 
+
+conn7 271555 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271549 
+
+conn2 271550 
+
+conn4 271552 
+
+conn5 271553 
+
+conn1 271549 
+
+conn6 271554 
+
+conn8 271556 
+
+conn1 271558 
+
+conn10 271558 
+
+conn4 271552 
+
+conn8 271556 
+
+conn1 271559 
+
+conn11 271559 
+
+conn7 271555 
+
+conn1 271558 
+
+conn10 271558 
+
+conn9 271557 
+
+conn1 271549 
+
+conn1 271559 
+
+conn11 271559 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271549 
+
+conn9 271557 
+
+conn1 271549 
+
+conn1 271560 
+
+conn12 271560 
+
+conn3 271551 
+
+conn5 271553 
+
+conn4 271552 
+
+conn1 271549 
+
+conn7 271555 
+
+conn3 271551 
+
+conn2 271550 
+
+conn7 271555 
+
+conn3 271551 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271549 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271560 
+
+conn12 271560 
+
+conn5 271553 
+
+conn5 271553 
+
+conn2 271550 
+
+conn5 271553 
+
+conn6 271554 
+
+conn8 271556 
+
+conn3 271551 
+
+conn8 271556 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn5 271553 
+
+conn1 271559 
+
+conn11 271559 
+
+conn9 271557 
+
+conn9 271557 
+
+conn6 271554 
+
+conn9 271557 
+
+conn1 271560 
+
+conn12 271560 
+
+conn4 271552 
+
+conn5 271553 
+
+conn7 271555 
+
+conn5 271553 
+
+conn2 271550 
+
+conn6 271554 
+
+conn7 271555 
+
+conn3 271551 
+
+conn7 271555 
+
+conn7 271555 
+
+conn3 271551 
+
+conn6 271554 
+
+conn1 271560 
+
+conn12 271560 
+
+conn5 271553 
+
+conn1 271549 
+
+conn5 271553 
+
+conn8 271556 
+
+conn1 271560 
+
+conn12 271560 
+
+conn8 271556 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271549 
+
+conn1 271549 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271558 
+
+conn10 271558 
+
+conn1 271559 
+
+conn11 271559 
+
+conn1 271559 
+
+conn11 271559 
+
+conn6 271554 
+
+conn9 271557 
+
+conn9 271557 
+
+conn5 271553 
+
+conn3 271551 
+
+conn1 271560 
+
+conn12 271560 
+
+conn5 271553 
+
+conn4 271552 
+
+conn4 271552 
+
+conn1 271560 
+
+conn12 271560 
+
+conn1 271549 
+
+conn7 271555 
+
+conn7 271555 
+
+conn1 271549 
+
+conn3 271551 
+
+conn3 271551 
+
+conn8 271556 
+
+conn1 271559 
+
+conn11 271559 
+
+conn5 271553 
+
+conn2 271550 
+
+conn1 272583 
+
+conn13 272583 
+
+conn1 272584 
+
+conn14 272584 
+
+conn4 272574 
+
+conn2 272572 
+
+conn1 272580 
+
+conn10 272580 
+
+conn4 272574 
+
+conn1 272586 
+
+conn16 272586 
+
+conn2 272572 
+
+conn1 272583 
+
+conn13 272583 
+
+conn1 272584 
+
+conn14 272584 
+
+conn1 272586 
+
+conn16 272586 
+
+conn1 272581 
+
+conn11 272581 
+
+conn1 272580 
+
+conn10 272580 
+
+conn7 272577 
+
+conn1 272581 
+
+conn11 272581 
+
+conn1 272582 
+
+conn12 272582 
+
+conn2 272572 
+
+conn7 272577 
+
+conn8 272578 
+
+conn4 272574 
+
+conn1 272583 
+
+conn13 272583 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272584 
+
+conn14 272584 
+
+conn2 272572 
+
+conn6 272576 
+
+conn2 272572 
+
+conn3 272573 
+
+conn7 272577 
+
+conn3 272573 
+
+conn1 272585 
+
+conn15 272585 
+
+conn1 272581 
+
+conn11 272581 
+
+conn9 272579 
+
+conn1 272584 
+
+conn14 272584 
+
+conn6 272576 
+
+conn1 272585 
+
+conn15 272585 
+
+conn8 272578 
+
+conn6 272576 
+
+conn3 272573 
+
+conn1 272571 
+
+conn1 272585 
+
+conn15 272585 
+
+conn1 272586 
+
+conn16 272586 
+
+conn7 272577 
+
+conn1 272580 
+
+conn10 272580 
+
+conn9 272579 
+
+conn3 272573 
+
+conn4 272574 
+
+conn1 272586 
+
+conn16 272586 
+
+conn8 272578 
+
+conn5 272575 
+
+conn6 272576 
+
+conn7 272577 
+
+conn9 272579 
+
+conn7 272577 
+
+conn1 272581 
+
+conn11 272581 
+
+conn6 272576 
+
+conn7 272577 
+
+conn1 272580 
+
+conn10 272580 
+
+conn8 272578 
+
+conn9 272579 
+
+conn4 272574 
+
+conn1 272585 
+
+conn15 272585 
+
+conn3 272573 
+
+conn1 272580 
+
+conn10 272580 
+
+conn3 272573 
+
+conn2 272572 
+
+conn4 272574 
+
+conn9 272579 
+
+conn5 272575 
+
+conn7 272577 
+
+conn1 272583 
+
+conn13 272583 
+
+conn7 272577 
+
+conn6 272576 
+
+conn8 272578 
+
+conn8 272578 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272586 
+
+conn16 272586 
+
+conn1 272585 
+
+conn15 272585 
+
+conn2 272572 
+
+conn5 272575 
+
+conn1 272571 
+
+conn1 272571 
+
+conn3 272573 
+
+conn1 272586 
+
+conn16 272586 
+
+conn3 272573 
+
+conn7 272577 
+
+conn9 272579 
+
+conn1 272585 
+
+conn15 272585 
+
+conn9 272579 
+
+conn5 272575 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272583 
+
+conn13 272583 
+
+conn8 272578 
+
+conn1 272583 
+
+conn13 272583 
+
+conn6 272576 
+
+conn5 272575 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272582 
+
+conn12 272582 
+
+conn2 272572 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272581 
+
+conn11 272581 
+
+conn4 272574 
+
+conn9 272579 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272586 
+
+conn16 272586 
+
+conn1 272571 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272581 
+
+conn11 272581 
+
+conn9 272579 
+
+conn1 272585 
+
+conn15 272585 
+
+conn1 272584 
+
+conn14 272584 
+
+conn1 272586 
+
+conn16 272586 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272586 
+
+conn16 272586 
+
+conn1 272582 
+
+conn12 272582 
+
+conn3 272573 
+
+conn1 272585 
+
+conn15 272585 
+
+conn5 272575 
+
+conn5 272575 
+
+conn1 272580 
+
+conn10 272580 
+
+conn6 272576 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272584 
+
+conn14 272584 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272584 
+
+conn14 272584 
+
+conn1 272571 
+
+conn7 272577 
+
+conn8 272578 
+
+conn1 272571 
+
+conn8 272578 
+
+conn6 272576 
+
+conn1 272584 
+
+conn14 272584 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272581 
+
+conn11 272581 
+
+conn1 272584 
+
+conn14 272584 
+
+conn5 272575 
+
+conn1 272571 
+
+conn3 272573 
+
+conn6 272576 
+
+conn1 272571 
+
+conn1 272581 
+
+conn11 272581 
+
+conn3 272573 
+
+conn6 272576 
+
+conn3 272573 
+
+conn1 272586 
+
+conn16 272586 
+
+conn9 272579 
+
+conn7 272577 
+
+conn1 272581 
+
+conn11 272581 
+
+conn4 272574 
+
+conn1 272571 
+
+conn1 272581 
+
+conn11 272581 
+
+conn5 272575 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272571 
+
+conn1 272586 
+
+conn16 272586 
+
+conn2 272572 
+
+conn3 272573 
+
+conn5 272575 
+
+conn1 272585 
+
+conn15 272585 
+
+conn7 272577 
+
+conn1 272580 
+
+conn10 272580 
+
+conn1 272582 
+
+conn12 272582 
+
+conn7 272577 
+
+conn1 272584 
+
+conn14 272584 
+
+conn1 272585 
+
+conn15 272585 
+
+conn1 272571 
+
+conn2 272572 
+
+conn2 272572 
+
+conn1 272582 
+
+conn12 272582 
+
+conn1 272571 
+
+conn6 272576 
+
+conn1 272583 
+
+conn13 272583 
+
+conn1 272571 
+
+conn2 272572 
+
+conn5 272575 
+
+conn1 272585 
+
+conn15 272585 
+
+conn6 272576 
+
+[report] load_overall_duration_ns : 600000000000.000000
+[report] load_overall_duration_s : 600.000000
+[report] load_overall_throughput : 47821.578333
+[report] load_overall_average_latency_ns : 20911.062220

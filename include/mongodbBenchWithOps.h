@@ -204,9 +204,7 @@ void mongodbBenchmark::endEBPFScript() {
     std::string sshPassword = "gxr123456";
     std::string ipAddress = "172.20.208.111";
     ebpf_pid=std::stoull(getRemoteEBPFPid(sshPassword,ipAddress));
-    // std::cout<<ebpf_pid<<std::endl;
-    // std::string command = "ssh gxr@172.20.208.111 \"sudo kill -10 " + std::to_string(ebpf_pid) + "\"";
-    
+
     std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"echo '" + sshPassword + "' | sudo -S kill -2 " + std::to_string(ebpf_pid) + "\"";
     int result = system(command.c_str());
     if (result != 0) {
@@ -294,9 +292,10 @@ void mongodbBenchmark::load_and_run()
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Sleep to reduce busy-waiting
     }
-    
+
+    benchmark_report(load_benchmark_prefix, "number_of_operations", std::to_string(num_of_ops));
     endEBPFScript();
-    std::this_thread::sleep_for(std::chrono::seconds(120));
+    std::this_thread::sleep_for(std::chrono::seconds(300));
     stop_flag.store(true);
     
     for (auto &thread : threads)
@@ -312,7 +311,6 @@ void mongodbBenchmark::load_and_run()
     double throughput = num_of_ops / duration_s;
     double average_latency_ns = duration_ns / num_of_ops;
 
-    benchmark_report(load_benchmark_prefix, "number_of_operations", std::to_string(num_of_ops));
     benchmark_report(load_benchmark_prefix, "overall_duration_ns", std::to_string(duration_ns));
     benchmark_report(load_benchmark_prefix, "overall_duration_s", std::to_string(duration_s));
     benchmark_report(load_benchmark_prefix, "overall_throughput", std::to_string(throughput));
@@ -373,11 +371,21 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, std::atomic
         rand++;
         completed_ops.fetch_add(1, std::memory_order_relaxed);
     }
+
+    // auto end_time = std::chrono::high_resolution_clock::now() + std::chrono::seconds(60);
+    // while (std::chrono::high_resolution_clock::now() < end_time)
+    // {
+    //     key=from_uint64_to_string(rand,key_size);
+    //     auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
+    //     rand++;
+    // }
+
     while (!stop_flag.load()) {
         key=from_uint64_to_string(rand,key_size);
         auto insert_one_result = collection.insert_one(make_document(kvp(key, common_value)));
         rand++;
     }
+
     // copyProfileToTempCollection(db);
     // std::string fileName="/home/wjxt/gxr/testMongoDB/log/"+std::to_string(thread_id)+"output.json";
     // std::ofstream outFile(fileName);
@@ -393,8 +401,8 @@ void mongodbBenchmark::clientThread(int thread_id, uint64_t core_id, std::atomic
     // }
     // outFile.close();
 
-    // num_of_ops+=rand;
-    // std::this_thread::sleep_for(std::chrono::seconds(120));
+    // // num_of_ops+=rand;
+    // std::this_thread::sleep_for(std::chrono::seconds(30));
     std::unique_lock<std::mutex> lock(mtx);
     cv.wait(lock, [this]{ return ebpf_completed; });
     collection.drop();
