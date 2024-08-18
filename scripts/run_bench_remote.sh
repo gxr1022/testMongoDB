@@ -15,7 +15,7 @@ RUN_PATH="/home/wjxt/gxr/testMongoDB"
 config_dir="$RUN_PATH/config"
 
 current=`date "+%Y-%m-%d-%H-%M-%S"`
-time_interval=600
+time_interval=60
 
 ip_address="172.20.208.111"
 

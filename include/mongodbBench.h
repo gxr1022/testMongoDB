@@ -142,7 +142,7 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
 
 void mongodbBenchmark::startEBPFScript() {
     std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"echo 'gxr123456' | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_mongo_lock_count_analysis_tmp.sh " 
-                          + std::to_string(300) + " " 
+                          + std::to_string(time_interval) + " " 
                           + std::to_string(num_threads) + " " 
                           + std::to_string(pid)  + "\"";
     int result = system(command.c_str());

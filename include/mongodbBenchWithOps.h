@@ -39,7 +39,7 @@ DEFINE_uint64(str_key_size, 8, "size of key (bytes)");
 DEFINE_uint64(str_value_size, 100, "size of value (bytes)");
 DEFINE_uint64(num_threads, 1, "the number of threads");
 DEFINE_uint64(num_of_ops, 1, "the number of operations");
-// DEFINE_uint64(time_interval, 10, "the time interval of insert operations");
+DEFINE_uint64(time_interval, 10, "the time interval of insert operations");
 DEFINE_uint64(pid, -1, "the process id of mongoDB server");
 
 DEFINE_bool(first_mode, true, "fist mode start multiply clients on the same mongoDB server");
@@ -65,7 +65,7 @@ public:
     uint64_t value_size;
     uint64_t num_of_ops;
     uint64_t num_threads;
-    // uint64_t time_interval;
+    uint64_t time_interval;
     uint64_t pid;
 
     std::vector<std::string> URIs;
@@ -126,7 +126,7 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
 
     this->key_size = FLAGS_str_key_size;
     this->value_size = FLAGS_str_value_size;
-    // this->time_interval = FLAGS_time_interval;
+    this->time_interval = FLAGS_time_interval;
     this->pid=FLAGS_pid;
 
     barrier_init(&this->barrier,this->num_threads);
@@ -160,10 +160,17 @@ mongodbBenchmark::mongodbBenchmark(int argc, char **argv):stop_flag(false)
 // }
 
 void mongodbBenchmark::startEBPFScript() {
-std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bash -c 'echo gxr123456 | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh " 
+// std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bash -c 'echo gxr123456 | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_lock_flow_analysis_ctrl_signal.sh " 
+//                       + std::to_string(num_threads) + " " 
+//                       + std::to_string(pid) + " " 
+//                       + std::to_string(num_of_ops) + "' > /dev/null 2>&1 &\"";
+std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bash -c 'echo gxr123456 | sudo -S /home/gxr/mongodb-run/ebpf_monitor/scripts/run_mongo_lock_count_analysis_ctrl_singal.sh " 
+                      + std::to_string(time_interval) + " " 
                       + std::to_string(num_threads) + " " 
                       + std::to_string(pid) + " " 
-                      + std::to_string(num_of_ops) + "' > /dev/null 2>&1 &\"";
+                    //   + std::to_string(num_of_ops) +  "'\"";
+                      + std::to_string(num_of_ops) +  "' > /dev/null 2>&1 &\"";
+
 
     int result = system(command.c_str());
     if (result != 0) {
@@ -173,7 +180,9 @@ std::string command = "sshpass -p 'gxr123456' ssh gxr@172.20.208.111 \"nohup bas
 
 
 std::string mongodbBenchmark::getRemoteEBPFPid(const std::string& sshPassword, const std::string& ipAddress) {
-    std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"pgrep -f \\\"lock_flow_analysis_ctrl_signal.py\\\" | head -n 1\"";
+    // std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"pgrep -f \\\"lock_flow_analysis_ctrl_signal.py\\\" | head -n 1\"";
+    std::string command = "sshpass -p '" + sshPassword + "' ssh gxr@" + ipAddress + " \"pgrep -f \\\"mongo_lock_count_analysis_ctrl_singal.py\\\" | head -n 1\"";
+
     char buffer[128];
     std::string result = "";
     FILE* pipe = popen(command.c_str(), "r");
@@ -274,7 +283,7 @@ void mongodbBenchmark::load_and_run()
 
     std::atomic<uint64_t> completed_ops{0}; // Counter for completed operations
     
-    startEBPFScript();
+    // startEBPFScript();
 
     for (int i = 0; i < num_threads; i++)
     {
@@ -284,7 +293,7 @@ void mongodbBenchmark::load_and_run()
                                  this->clientThread(i, core_id, completed_ops); 
                              });
     }
-    
+    startEBPFScript();
     
     // Wait for all client threads to finish based on the number of operations
     auto start_time = std::chrono::high_resolution_clock::now();
@@ -295,7 +304,7 @@ void mongodbBenchmark::load_and_run()
 
     benchmark_report(load_benchmark_prefix, "number_of_operations", std::to_string(num_of_ops));
     endEBPFScript();
-    std::this_thread::sleep_for(std::chrono::seconds(300));
+    // std::this_thread::sleep_for(std::chrono::seconds(60));
     stop_flag.store(true);
     
     for (auto &thread : threads)

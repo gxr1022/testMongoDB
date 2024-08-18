@@ -20,14 +20,15 @@ ip_address="172.20.208.111"
 
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
-# threads=(1)
-# for ((i = 4; i <= 32; i += 4)); do
-#     threads+=($i)
-# done
-
 threads=(1)
+for ((i = 4; i <= 32; i += 4)); do
+    threads+=($i)
+done
 
-num_of_ops_set=(5000 6000 7000 8000 9000 10000)
+# threads=(1)
+
+# num_of_ops_set=(5000 6000 7000 8000 9000 10000)
+num_of_ops_set=(1000000)
 # num_of_ops_set=(10000 20000 40000 60000 80000 100000 200000 400000 600000 800000 1000000)
 hs=(
 run_clients
@@ -121,7 +122,8 @@ for t in ${threads[*]}; do
                 echo "Log file in: ${this_log_path}"
             done
         done
-        sleep 60
+        sleep 120
+
         # close ebpf program running on remote server
         # pid_ebpf=$(sshpass -p $SSH_PASSWORD ssh gxr@$ip_address "echo $SUDO_PASSWORD | sudo -S pgrep -f lock_flow_analysis_ctrl_signal.py | head -n 1")
         # echo ${pid_ebpf}
