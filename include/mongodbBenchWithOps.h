@@ -304,7 +304,7 @@ void mongodbBenchmark::load_and_run()
 
     benchmark_report(load_benchmark_prefix, "number_of_operations", std::to_string(num_of_ops));
     endEBPFScript();
-    // std::this_thread::sleep_for(std::chrono::seconds(60));
+    std::this_thread::sleep_for(std::chrono::seconds(300));
     stop_flag.store(true);
     
     for (auto &thread : threads)

@@ -20,7 +20,7 @@ ip_address="172.20.208.111"
 
 sudo "$RUN_PATH/scripts/clear_ramdisk.sh"
 
-threads=(1)
+threads=()
 for ((i = 4; i <= 32; i += 4)); do
     threads+=($i)
 done
